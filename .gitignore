@@ -1,0 +1,8 @@
+*
+!.gitignore
+!index.html
+!assets/
+!assets/**
+!f1edbef12f2326129cf8486b952bfd0a.txt
+!.github/
+!.github/**
