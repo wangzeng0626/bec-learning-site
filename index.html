@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>猎头工作手册</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f5bea'/%3E%3Ctext x='32' y='42' font-size='34' text-anchor='middle' fill='white'%3E%E7%8C%8E%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/styles.css?v=20260827-4" />
 </head>
 <body>
 
@@ -18,7 +18,7 @@
       <span>猎头工作手册</span>
     </div>
     <div class="search-box">
-      <input id="searchInput" type="text" placeholder="搜索：客户分析 / 电话 / Offer / 背调" />
+      <input id="searchInput" type="text" placeholder="搜索：客户分析 / 电话 / 录用 / 背调" />
       <button class="clear" id="searchClear" aria-label="清除">✕</button>
     </div>
   </header>
@@ -27,79 +27,69 @@
   <aside class="sidebar" id="sidebar">
     <div class="side-head">猎头工作手册</div>
     <div class="nav-group">
-      <div class="group-title">总览</div>
-      <a class="nav-link sub" href="#home"><span class="ic">🏠</span>手册概览</a>
-      <a class="nav-link sub" href="#process-catalog"><span class="ic">📋</span>流程目录</a>
-      <a class="nav-link sub" href="#sop-flow"><span class="ic">🔄</span>工作流全景</a>
+      <div class="group-title">从这里开始</div>
+      <a class="nav-link sub" href="#home"><span class="ic">🏠</span>手册怎么用</a>
+      <a class="nav-link sub" href="#sop-flow"><span class="ic">🔄</span>做单总览：六道判断关</a>
     </div>
-    <div class="nav-group">
-      <div class="group-title">接单</div>
-      <a class="nav-link sub" href="#client-analysis"><span class="ic">🏢</span>客户分析</a>
-      <a class="nav-link sub" href="#skill-deconstruct"><span class="ic">🧩</span>岗位解构</a>
-      <a class="nav-link sub" href="#skill-industry"><span class="ic">🌐</span>行业研究</a>
-    </div>
-    <div class="nav-group">
-      <div class="group-title">赛道研究</div>
-      <a class="nav-link sub" href="#skill-embodied"><span class="ic">🤖</span>具身智能</a>
-      <a class="nav-link sub" href="#skill-llm"><span class="ic">🧠</span>大模型</a>
-      <a class="nav-link sub" href="#skill-fde"><span class="ic">🚀</span>FDE</a>
-    </div>
-    <div class="nav-group">
-      <div class="group-title">寻访</div>
-      <a class="nav-link sub step" href="#sop-search"><span class="sn">1</span>寻访</a>
-      <a class="nav-link sub" href="#exec-mapping"><span class="ic">👔</span>高管寻访</a>
-      <a class="nav-link sub" href="#sop-channel"><span class="ic">🛰️</span>渠道</a>
-      <a class="nav-link sub" href="#resume"><span class="ic">📄</span>简历判断</a>
-    </div>
-    <div class="nav-group">
-      <div class="group-title">候选人沟通</div>
-      <a class="nav-link sub" href="#skill-firstcall"><span class="ic">📝</span>电话准备</a>
-      <a class="nav-link sub step" href="#sop-call"><span class="sn">2</span>电话沟通</a>
-      <a class="nav-link sub" href="#skill-candidate"><span class="ic">🔍</span>候选人判断</a>
-      <a class="nav-link sub" href="#rel-refer"><span class="ic">🤝</span>候选人关系</a>
-    </div>
-    <div class="nav-group">
-      <div class="group-title">推荐与面试</div>
-      <a class="nav-link sub step" href="#sop-recommend"><span class="sn">3</span>推荐</a>
-      <a class="nav-link sub step" href="#sop-interview"><span class="sn">4</span>面试管理</a>
-    </div>
-    <div class="nav-group">
-      <div class="group-title">Offer 与入职</div>
-      <a class="nav-link sub step" href="#sop-offer"><span class="sn">5</span>Offer</a>
-      <a class="nav-link sub step" href="#sop-onboard"><span class="sn">6</span>入职跟进</a>
-    </div>
-    <div class="nav-group">
-      <div class="group-title">回款与保证期</div>
-      <a class="nav-link sub step" href="#sop-payment"><span class="sn">7</span>回款</a>
-      <a class="nav-link sub step" href="#sop-guarantee"><span class="sn">8</span>保证期</a>
-    </div>
-    <div class="nav-group">
-      <div class="group-title">客户开发</div>
-      <a class="nav-link sub" href="#skill-bd"><span class="ic">📣</span>BD 电话</a>
-      <a class="nav-link sub" href="#client-dev"><span class="ic">🎯</span>客户开发</a>
-    </div>
-    <div class="nav-group">
-      <div class="group-title">职业能力</div>
+    <div class="nav-group nav-group-growth">
+      <div class="group-title">新人先看：训练与协作</div>
+      <a class="nav-link sub" href="#path"><span class="ic">🗺️</span>60 天新人训练</a>
+      <a class="nav-link sub" href="#mentor"><span class="ic">👥</span>导师带教</a>
       <a class="nav-link sub" href="#culture"><span class="ic">💡</span>团队协作</a>
       <a class="nav-link sub" href="#essence"><span class="ic">🧬</span>职业能力</a>
     </div>
     <div class="nav-group">
-      <div class="group-title">常用资料</div>
+      <div class="group-title">01 接单：先把需求说清</div>
+      <a class="nav-link sub" href="#client-analysis"><span class="ic">🏢</span>客户分析：这单值不值得做</a>
+      <a class="nav-link sub" href="#skill-deconstruct"><span class="ic">🧩</span>岗位定义：到底要找什么人</a>
+      <a class="nav-link sub" href="#skill-industry"><span class="ic">🌐</span>市场验证：市场上有没有这种人</a>
+    </div>
+    <div class="nav-group">
+      <div class="group-title">02 找人：验证市场，再扩大寻访</div>
+      <a class="nav-link sub step" href="#sop-search"><span class="sn">1</span>寻访：从哪里开始找</a>
+      <a class="nav-link sub" href="#exec-mapping"><span class="ic">👔</span>中高端人才：怎么画人才地图</a>
+      <a class="nav-link sub" href="#sop-channel"><span class="ic">🛰️</span>人才库与渠道：怎么管理</a>
+      <a class="nav-link sub" href="#rel-refer"><span class="ic">🤝</span>人才关系：怎么持续经营</a>
+      <a class="nav-link sub" href="#resume"><span class="ic">📄</span>简历判断：先筛掉哪些人</a>
+    </div>
+    <div class="nav-group">
+      <div class="group-title">03 判断人：他能做、愿意来吗</div>
+      <a class="nav-link sub" href="#skill-firstcall"><span class="ic">📝</span>电话前：准备什么</a>
+      <a class="nav-link sub step" href="#sop-call"><span class="sn">2</span>电话中：怎么把话聊透</a>
+      <a class="nav-link sub" href="#skill-candidate"><span class="ic">🔍</span>候选人判断：能做、想来、风险</a>
+    </div>
+    <div class="nav-group">
+      <div class="group-title">04 推进决定：让双方做对选择</div>
+      <a class="nav-link sub step" href="#sop-recommend"><span class="sn">3</span>推荐：为什么推荐这个人</a>
+      <a class="nav-link sub step" href="#sop-interview"><span class="sn">4</span>面试：每一轮要验证什么</a>
+      <a class="nav-link sub step" href="#sop-offer"><span class="sn">5</span>录用沟通：怎么提高接受率</a>
+    </div>
+    <div class="nav-group">
+      <div class="group-title">05 交付收口：入职、回款、过保</div>
+      <a class="nav-link sub step" href="#sop-onboard"><span class="sn">6</span>入职跟进：防止临门变卦</a>
+      <a class="nav-link sub step" href="#sop-payment"><span class="sn">7</span>回款：把结果变成收入</a>
+      <a class="nav-link sub step" href="#sop-guarantee"><span class="sn">8</span>保证期：让人真正留下</a>
+      <a class="nav-link sub" href="#risk"><span class="ic">🛡️</span>风控：怎么核实、何时停</a>
+    </div>
+    <div class="nav-group">
+      <div class="group-title">06 经营客户：把一单做成长期合作</div>
+      <a class="nav-link sub" href="#skill-bd"><span class="ic">📣</span>BD 电话：怎么打开客户</a>
+      <a class="nav-link sub" href="#client-dev"><span class="ic">🎯</span>客户开发：怎么持续拿单</a>
+    </div>
+    <div class="nav-group">
+      <div class="group-title">行业与跨行业岗位</div>
+      <a class="nav-link sub" href="#skill-embodied"><span class="ic">🤖</span>具身智能：找什么人、怎么聊</a>
+      <a class="nav-link sub" href="#skill-llm"><span class="ic">🧠</span>大模型：找什么人、怎么聊</a>
+      <a class="nav-link sub" href="#skill-fde"><span class="ic">🚀</span>FDE：前线部署工程师</a>
+    </div>
+    <div class="nav-group nav-group-resources">
+      <div class="group-title">查阅与工具</div>
       <a class="nav-link sub" href="#faq-center"><span class="ic">❓</span>问题速查</a>
-      <a class="nav-link sub" href="#deliverables"><span class="ic">📦</span>交付物</a>
-      <a class="nav-link sub" href="#tools"><span class="ic">🧰</span>工具与模板</a>
+      <a class="nav-link sub" href="#deliverables"><span class="ic">📦</span>做单交付物</a>
+      <a class="nav-link sub" href="#tools"><span class="ic">🧰</span>系统与资料</a>
     </div>
-    <div class="nav-group">
-      <div class="group-title">新人训练</div>
-      <a class="nav-link sub" href="#path"><span class="ic">🗺️</span>90 天训练</a>
-      <a class="nav-link sub" href="#week1"><span class="ic">🌱</span>第 1 周</a>
-      <a class="nav-link sub" href="#week24"><span class="ic">🛠️</span>第 2—4 周</a>
-      <a class="nav-link sub" href="#month23"><span class="ic">🚀</span>第 2—3 月</a>
-      <a class="nav-link sub" href="#mentor"><span class="ic">👥</span>导师带教</a>
-    </div>
-    <div class="nav-group">
-      <div class="group-title">风控与复盘</div>
-      <a class="nav-link sub" href="#risk"><span class="ic">🛡️</span>风控</a>
+    <div class="nav-group nav-group-review">
+      <div class="group-title">案例与复盘</div>
       <a class="nav-link sub" href="#cases-win"><span class="ic">✅</span>成功案例</a>
       <a class="nav-link sub" href="#cases-fail"><span class="ic">⚠️</span>失败案例</a>
       <a class="nav-link sub" href="#cases-review"><span class="ic">📖</span>案例复盘模板</a>
@@ -116,32 +106,10 @@
 <div class="hero">
 <span class="hero-kicker">团队内部资料</span>
       <h1>猎头工作手册</h1>
-      <p>围绕一张真实职位单推进：先校准需求，再找人、触达、推荐、谈 Offer、过保回款。每一步都有动作、判断点和交付物。</p>
+      <p>猎头不是替客户搬运简历，而是把“要什么人、市场上有没有、谁能成事、怎样促成”四个不确定，变成有依据的决定。</p>
     </div>
 
-    <div class="statband">
-      <div class="stat s1"><span class="ic">🔄</span><div class="v" data-count="8">0</div><div class="l">步做单 SOP 流程</div></div>
-      <div class="stat s2"><span class="ic">📚</span><div class="v" data-count="21">0</div><div class="l">个核心实战章节</div></div>
-      <div class="stat s3"><span class="ic">❓</span><div class="v" data-count="44">0</div><div class="l">个翻车场景速查</div></div>
-      <div class="stat s4"><span class="ic">✅</span><div class="v" data-count="100" data-suffix="+">0</div><div class="l">条「照着做」清单</div></div>
-      <div class="stat s5"><span class="ic">🎭</span><div class="v" data-count="21">0</div><div class="l">个逐字话术剧本</div></div>
-      <div class="stat s6"><span class="ic">🗓️</span><div class="v" data-count="90">0</div><div class="l">天新人出师路线</div></div>
-    </div><div class="quicknav"><a href="#process-catalog"><span class="qn-ic">📋</span><span class="qn-t">流程目录</span><span class="qn-d">先知道每一步去哪看</span></a><a href="#sop-flow"><span class="qn-ic">🔄</span><span class="qn-t">做单 8 步全景</span><span class="qn-d">按阶段推进候选人</span></a><a href="#logic-map"><span class="qn-ic">🧭</span><span class="qn-t">逻辑地图</span><span class="qn-d">每章本质一句话</span></a><a href="#deliverables"><span class="qn-ic">📦</span><span class="qn-t">产出物中心</span><span class="qn-d">每环节要交什么 + 模板</span></a><a href="#faq-hub"><span class="qn-ic">❓</span><span class="qn-t">问题速查中心</span><span class="qn-d">卡住了先对号入座</span></a><a href="#path"><span class="qn-ic">🗺️</span><span class="qn-t">90 天成长地图</span><span class="qn-d">新人按阶段打怪升级</span></a></div>
-
-    <h2>怎么使用</h2>
-    <div class="keypoints">
-      <div class="kp"><b>① 有职位单</b>：直接从<a href="#client-analysis"><b>客户分析</b></a>开始。先确认职位真实性、预算、决策链和客户反馈节奏。</div>
-      <div class="kp"><b>② 正在推进</b>：按<a href="#sop-flow"><b>做单 8 步</b></a>往下走。每完成一步，再进入下一步，避免“边找边猜”。</div>
-      <div class="kp"><b>③ 某一步卡住</b>：去<a href="#faq-hub"><b>问题速查</b></a>找症状；交付前去<a href="#deliverables"><b>产出物中心</b></a>核对是否漏项。</div>
-    </div>
-
-    <h2>做单主线</h2>
-    <div class="home-sop">
-      <a href="#client-analysis"><span>01</span><b>接单校准</b><em>客户、HC、预算、画像、反馈 SLA</em></a>
-      <a href="#sop-search"><span>02</span><b>寻访建池</b><em>人才地图、名单分层、触达优先级</em></a>
-      <a href="#sop-flow"><span>03</span><b>推进成交</b><em>沟通、推荐、面试、Offer、过保</em></a>
-    </div>
-    <div class="callout tip"><span class="tt">🚀 使用原则</span>首页只负责把你送进正确的 SOP。第一次使用先看<a href="#process-catalog"><b>流程目录</b></a>；拿到真实岗位后，从<a href="#client-analysis"><b>客户分析</b></a>开始，不要跳过校准直接搜简历。</div>
+    <div class="quicknav"><a href="#sop-flow"><span class="qn-t">做单总览</span><span class="qn-d">先看六道判断关</span></a><a href="#client-analysis"><span class="qn-t">刚接到岗位</span><span class="qn-d">先确认这单值不值得做</span></a><a href="#skill-candidate"><span class="qn-t">人选怎么判断</span><span class="qn-d">能做、想来、能入职、风险</span></a><a href="#deliverables"><span class="qn-t">需要交付什么</span><span class="qn-d">画像、推荐报告、进度记录</span></a></div>
 
     </section>
     <section class="section" id="process-catalog">
@@ -159,13 +127,13 @@
         <div class="catalog-card c2">
           <div class="cc-head"><span class="cc-no">02</span><span class="cc-title">寻访找人</span></div>
           <p>先画目标公司和人才池，再按优先级触达，不靠平台随机刷。</p>
-          <div class="cc-links"><a href="#sop-search">先画名单</a><a href="#exec-mapping">高管怎么找</a><a href="#sop-channel">渠道怎么选</a><a href="#resume">简历先看什么</a></div>
+          <div class="cc-links"><a href="#sop-search">先画名单</a><a href="#exec-mapping">中高端怎么找</a><a href="#sop-channel">人才库怎么管</a><a href="#resume">简历先看什么</a></div>
           <dl><dt>输出</dt><dd>Longlist / Mapping 表 / 触达优先级</dd><dt>红灯</dt><dd>只有名单没有状态、平台搜到哪算哪</dd></dl>
         </div>
         <div class="catalog-card c3">
           <div class="cc-head"><span class="cc-no">03</span><span class="cc-title">触达沟通</span></div>
           <p>电话先建立信任、再收信息；挂电话后才判断这个人是该推进、该养还是该放。</p>
-          <div class="cc-links"><a href="#skill-firstcall">打前准备</a><a href="#sop-call">电话怎么聊</a><a href="#skill-candidate">电话后怎么判断</a><a href="#rel-refer">后续怎么维护</a></div>
+          <div class="cc-links"><a href="#skill-firstcall">打前准备</a><a href="#sop-call">电话怎么聊</a><a href="#skill-candidate">电话后怎么判断</a></div>
           <dl><dt>输出</dt><dd>通话记录 / 人选判断 / 下一步动作</dd><dt>红灯</dt><dd>一上来问隐私、没听出真实动机、挂了电话没结论</dd></dl>
         </div>
         <div class="catalog-card c4">
@@ -183,14 +151,14 @@
         <div class="catalog-card c6">
           <div class="cc-head"><span class="cc-no">06</span><span class="cc-title">增长沉淀</span></div>
           <p>单子之外要持续造单、复盘案例、训练新人，形成团队打法。</p>
-          <div class="cc-links"><a href="#skill-bd">BD 电话</a><a href="#client-dev">客户开发</a><a href="#path">90 天成长</a><a href="#cases-review">案例复盘</a><a href="#tools">工具清单</a></div>
+          <div class="cc-links"><a href="#skill-bd">BD 电话</a><a href="#client-dev">客户开发</a><a href="#path">60 天成长</a><a href="#cases-review">案例复盘</a><a href="#tools">工具清单</a></div>
           <dl><dt>输出</dt><dd>客户开发记录 / 复盘模板 / 新人考核表</dd><dt>红灯</dt><dd>聊完没有下一步、失败案例不复盘</dd></dl>
         </div>
       </div>
 
       <div class="research-entry">
-        <div><b>赛道研究，不是做单步骤</b><span>接到具身智能、大模型或 FDE 岗位时再打开。它解决的是“这个行业怎么赚钱、公司卡在哪、该找什么人”，不替代客户分析和岗位解构。</span></div>
-        <p><a href="#skill-embodied">具身智能</a><a href="#skill-llm">大模型</a><a href="#skill-fde">FDE</a></p>
+        <div><b>行业与岗位研究，不是做单步骤</b><span>接到具身智能、大模型岗位，或需要判断 FDE 这类落地角色时再打开。它解决的是“公司怎么赚钱、卡在哪、该找什么人”，不替代客户分析和岗位解构。</span></div>
+        <p><a href="#skill-embodied">具身智能</a><a href="#skill-llm">大模型</a><a href="#skill-fde">FDE 落地岗位</a></p>
       </div>
 
       <h3>专业判断主线 · 资深猎头真正盯什么</h3>
@@ -221,7 +189,7 @@
       <div class="entry-lanes">
         <div class="lane"><b>有真实岗位</b><span>从「接单启动」开始，按 01 → 05 推进，每一步去产出物中心验收。</span></div>
         <div class="lane"><b>正在卡单</b><span>先去「问题速查中心」找症状，再回到对应章节补方法。</span></div>
-        <div class="lane"><b>新人学习</b><span>先读「工作流全景」和「90 天成长」，再跟着真实职位做一次完整闭环。</span></div>
+        <div class="lane"><b>新人学习</b><span>先读「做单总览」和「60 天新人训练」，再跟着真实职位跑一次完整闭环。</span></div>
       </div>
 
     </section>
@@ -266,72 +234,59 @@
 
     <section class="section" id="sop-flow">
 
-      <h2>猎头做单的第一性原理 · 一层层拿掉不确定性</h2>
-      <p class="subtitle">做单不是从搜简历开始，而是依次回答：<b>这单值不值得做 → 客户到底要谁 → 市场上有没有 → 这个人愿不愿意动 → 两边会不会反悔</b>。后面的寻访、电话、推荐、面试、Offer，只是在逐层拿掉这些不确定性。</p>
+      <h2>做单 SOP · 把人才决策做成可控交付</h2>
+      <p class="subtitle">客户付费不是为了多收几份简历，而是希望你帮他更快、更稳地完成一笔人才决策。猎头的工作，就是依次拿掉五种不确定性：<b>这单值不值得做、到底要解决什么问题、市场有没有供给、这个人愿不愿意来、双方能不能走到入职</b>。</p>
 
-      <div class="keypoints">
-        <div class="kp-title">本章干货</div>
+      <h3>客户真正买的是什么</h3>
+      <div class="swimlane">
+        <div class="sw-head">客户的损失</div><div class="sw-head">猎头提供的价值</div><div class="sw-head">客户应该看到的证据</div><div class="sw-head">不能只靠什么</div><div class="sw-head">你的交付</div>
+        <div class="sw-stage">岗位空缺太久</div><div>缩短找到合格人选的时间</div><div>目标公司、人才池、触达节奏和每周进展</div><div>“我在帮您找”</div><div>市场地图 + 下一步名单</div>
+        <div class="sw-stage">内部意见不一致</div><div>把模糊需求变成可比较的标准</div><div>业务任务、Must 条件、反例、一票否决项</div><div>照抄 JD</div><div>岗位 Scorecard</div>
+        <div class="sw-stage">错招代价高</div><div>提前暴露能力、动机和入职风险</div><div>经历事实、动机、竞业、薪酬、家庭和其他机会</div><div>只看简历和面试感觉</div><div>候选人评估报告</div>
+        <div class="sw-stage">流程总是卡住</div><div>推动真正的决策人按节奏做决定</div><div>决策链、每轮面试要回答的问题、反馈时点</div><div>不断催客户“看一下”</div><div>流程表 + 风险升级记录</div>
+      </div>
+      <div class="callout tip"><span class="tt">一句话判断自己有没有价值</span>如果把你从这单拿掉，客户是否仍然能拿到同样的市场信息、候选人判断和推进节奏？如果答案是“能”，你提供的只是简历；如果答案是“不能”，你才在提供专业服务。</div>
+
+      <h3>六道关口：每一关都要有事实、有结论</h3>
+      <div class="gate-grid">
+        <div class="gate"><span>01</span><b>单子准入</b><em><b>要回答：</b>HC、预算、拍板人和合作条件是否真实？<br><b>过关：</b>明确投入等级；不达标就试做、降级或暂停。</em></div>
+        <div class="gate"><span>02</span><b>岗位定义</b><em><b>要回答：</b>这个人入职 6 个月具体解决什么问题？<br><b>过关：</b>写清 Must、可放宽项、反例和目标公司。</em></div>
+        <div class="gate"><span>03</span><b>市场验证</b><em><b>要回答：</b>市场上有没有、买不买得到、从哪里挖？<br><b>过关：</b>用首批样本让客户确认画像或调整预期。</em></div>
+        <div class="gate"><span>04</span><b>候选人判断</b><em><b>要回答：</b>他能做、想做、能来、风险可控吗？<br><b>过关：</b>四项事实完整，才进入推荐池。</em></div>
+        <div class="gate"><span>05</span><b>双边决策</b><em><b>要回答：</b>每轮面试和 Offer 还缺哪个决定？<br><b>过关：</b>客户与候选人都说清下一步和接受条件。</em></div>
+        <div class="gate"><span>06</span><b>结果保护</b><em><b>要回答：</b>入职、试用、回款会在哪里出问题？<br><b>过关：</b>风险触点、开票责任人、保证期计划已落表。</em></div>
+      </div>
+
+      <h3>四张卡和一个数据看板</h3>
+      <div class="ops">
+        <div class="ops-title">不要靠记忆做单</div>
+        <p class="ops-sub">资深猎头不是比谁更忙，而是每一步都有同一份事实，客户、候选人和团队能据此做决定。</p>
         <ol>
-          <li><b>接单前</b>先完成客户判断、岗位解构；陌生赛道才补行业研究</li>
-          <li><b>做单中</b>从名单 → 电话 → 人选判断 → 推荐 → 面试 → Offer 逐步减少不确定性</li>
-          <li><b>做单后</b>入职、回款、保证期不是收尾，是把一次交易变成长期关系</li>
+          <li><b>单子评分卡</b>：HC 是否书面确认、预算是否可用、拍板人是否可见、反馈是否有时点、合作条款是否清楚。<span class="out">10 分以上全力做；7–9 分先验证；6 分以下暂停</span></li>
+          <li><b>岗位 Scorecard</b>：业务目标、入职 6 个月交付、三条 Must、两条可放宽项、一票否决、目标公司。<span class="out">客户书面确认后再大规模搜</span></li>
+          <li><b>市场校准卡</b>：首批样本数量、可触达比例、薪酬水位、拒绝原因、可迁移来源。<span class="out">把“找不到”变成可讨论的市场事实</span></li>
+          <li><b>候选人评估卡</b>：能做 / 想做 / 能来 / 风险可控，四项分别写事实，不写“感觉不错”。<span class="out">事实不全，不推荐</span></li>
+          <li><b>单子看板</b>：本周新增、有效沟通、可推荐、面试、Offer、风险、下周需要客户决定的事。<span class="out">周报只报变化和要决策的问题</span></li>
         </ol>
       </div>
-      <div class="flow">
-        <div class="node"><a href="#sop-search"><div class="n-num">1</div><div class="n-name">寻访</div><div class="n-en">Search</div></a></div>
-        <div class="node"><a href="#sop-call"><div class="n-num">2</div><div class="n-name">打Call</div><div class="n-en">Outreach</div></a></div>
-        <div class="node"><a href="#sop-recommend"><div class="n-num">3</div><div class="n-name">推荐</div><div class="n-en">Submit</div></a></div>
-        <div class="node"><a href="#sop-interview"><div class="n-num">4</div><div class="n-name">面试</div><div class="n-en">Interview</div></a></div>
-        <div class="node"><a href="#sop-offer"><div class="n-num">5</div><div class="n-name">Offer</div><div class="n-en">Negotiate</div></a></div>
-        <div class="node"><a href="#sop-onboard"><div class="n-num">6</div><div class="n-name">入职</div><div class="n-en">Onboard</div></a></div>
-        <div class="node"><a href="#sop-payment"><div class="n-num">7</div><div class="n-name">回款</div><div class="n-en">Invoice</div></a></div>
-        <div class="node"><a href="#sop-guarantee"><div class="n-num">8</div><div class="n-name">过保</div><div class="n-en">Guarantee</div></a></div>
-      </div>
 
-      <h3>每一步只解决一件事：谁该做什么、做到什么算过</h3>
-      <div class="swimlane">
-        <div class="sw-head">阶段</div><div class="sw-head">客户侧</div><div class="sw-head">猎头动作</div><div class="sw-head">候选人侧</div><div class="sw-head">交接标准</div>
-        <div class="sw-stage">接单</div><div>确认 HC、预算、拍板人、面试流程</div><div>做客户体检，拆 JD，形成画像</div><div>暂不触达</div><div><a href="#tpl-client">客户信息卡</a> + <a href="#tpl-profile">人才画像</a>已确认</div>
-        <div class="sw-stage">寻访</div><div>提供目标公司、禁挖名单、反馈口径</div><div>画 Longlist，分层触达，更新状态</div><div>被识别、被初筛、被激活</div><div><a href="#tpl-longlist">Longlist</a>里每个人有下一步日期</div>
-        <div class="sw-stage">沟通</div><div>补充卖点与顾虑回应</div><div>First Call 采集事实，判断动机与风险</div><div>明确 RFL、薪资、家庭、其他机会</div><div><a href="#tpl-firstcall">First Call 表单</a>完整，可决定是否推荐</div>
-        <div class="sw-stage">推荐</div><div>查重、看推荐语、给是否面试反馈</div><div>写四条推荐理由，做简历与风控检查</div><div>确认简历真实、意向真实、可面试时间</div><div><a href="#tpl-recommend">推荐语</a>能解释“为什么是他”</div>
-        <div class="sw-stage">面试</div><div>安排面试官，给反馈，推进流程</div><div>双向辅导，追反馈，修正画像</div><div>准备案例，反馈感受，暴露顾虑</div><div><a href="#tpl-interview">面试评估</a>写清通过点和淘汰点</div>
-        <div class="sw-stage">Offer</div><div>出薪酬方案，确认审批节奏</div><div>管理双方预期，预演 Counter Offer</div><div>确认底线、比较机会、做决定</div><div><a href="#tpl-offer">Offer 对比表</a>已锁定接受条件</div>
-        <div class="sw-stage">入职回款</div><div>完成入职、开票、付款、试用期反馈</div><div>跟进风险、催回款、过保转关系</div><div>稳定入职，反馈真实适应情况</div><div><a href="#tpl-payment">回款节奏</a>和<a href="#tpl-touch">触点日历</a>持续更新</div>
-      </div>
-
-      <h3>四道门没过，就别急着往下推</h3>
-      <div class="gate-grid">
-        <div class="gate"><span>1</span><b>需求门</b><em>拍板人、预算、Must 条件没锁定，不开始大规模寻访。</em></div>
-        <div class="gate"><span>2</span><b>动机门</b><em>RFL、现薪、期望、其他机会没问清，不提交推荐。</em></div>
-        <div class="gate"><span>3</span><b>风控门</b><em>学历、履历、竞业、离职原因没核过，不进终面。</em></div>
-        <div class="gate"><span>4</span><b>成交门</b><em>接受条件、入职时间、Counter 预案没锁定，不催客户发 Offer。</em></div>
-      </div>
-
-      <h3>刚接单的前三天：先验证，不要闷头找人</h3>
+      <h3>首批市场校准：前 10 人不是为了凑推荐</h3>
       <div class="calibration">
-        <div class="cal-item"><b>0-24h</b><span>完成 Kickoff，拿到 Must / Nice / 一票否决 / 目标公司 / 决策链。当天发书面 Search Brief 让客户确认。</span></div>
-        <div class="cal-item"><b>24-48h</b><span>出第一版 Longlist，不追求完美，先用 15-30 个样本验证市场是否有人、薪资是否买得到。</span></div>
-        <div class="cal-item"><b>48-72h</b><span>提交市场校准反馈：哪些条件过窄、哪些公司能挖、候选人主要顾虑是什么，请客户决定放宽或加码。</span></div>
+        <div class="cal-item"><b>第 1 天</b><span>先拿到岗位 Scorecard；不完整就只做桌面研究，不承诺推荐时间。</span></div>
+        <div class="cal-item"><b>第 2–3 天</b><span>从目标公司和相邻来源抽样 20–40 人；记录供给、薪酬、竞业、地点和人才流动，不急着满世界触达。</span></div>
+        <div class="cal-item"><b>前 5 次有效沟通后</b><span>判断“人不存在、钱不够、要求冲突，还是卖点不够”；带着事实要求客户放宽、加码或重排优先级。</span></div>
+        <div class="cal-item"><b>前 10 人后</b><span>给客户一份校准结论：继续按原画像、改画像、换搜索来源，或暂停这单。没有这一步，只是在用时间替客户试错。</span></div>
       </div>
-      <div class="callout warn"><span class="tt">专业红线</span>客户不反馈、需求不校准、薪酬不现实，还要求你“多推几个看看”，这不是执行问题，是单子质量问题。资深猎头会先管理投入强度，再决定是否继续深挖。</div>
+      <div class="callout warn"><span class="tt">资深猎头的止损动作</span>客户持续不反馈、拒绝说明淘汰原因、预算低于市场、又不愿调整画像时，不要“再多推几个”。把单子降为低优先级，并书面写清：要重新启动，需要客户先决定什么。</div>
 
-      <h3>做单转化漏斗 · 100 个触达，最后成几单？</h3>
-      <p style="color:var(--c-ink-3);font-size:14px;margin-top:2px;">新人典型漏斗（参考值）：每个环节都在漏人，<b>漏斗的意义是让你知道卡点在哪一层</b>——不是焦虑转化率，而是找到下一步动作。</p>
-      <div class="funnel">
-        <div class="f-row"><span class="f-name">触达</span><div class="f-track"><div class="f-fill" style="--w:100%"></div></div><span class="f-num">100</span><span class="f-meta">基准</span></div>
-        <div class="f-row"><span class="f-name">有效通话</span><div class="f-track"><div class="f-fill" style="--w:45%"></div></div><span class="f-num">45</span><span class="f-meta">45% 接通</span></div>
-        <div class="f-row"><span class="f-name">进入推荐</span><div class="f-track"><div class="f-fill" style="--w:25%"></div></div><span class="f-num">25</span><span class="f-meta">56% 转化</span></div>
-        <div class="f-row"><span class="f-name">面试</span><div class="f-track"><div class="f-fill" style="--w:10%"></div></div><span class="f-num">10</span><span class="f-meta">40% 通过</span></div>
-        <div class="f-row"><span class="f-name">Offer</span><div class="f-track"><div class="f-fill" style="--w:4%"></div></div><span class="f-num">4</span><span class="f-meta">40% 发offer</span></div>
-        <div class="f-row"><span class="f-name">入职</span><div class="f-track"><div class="f-fill" style="--w:3%"></div></div><span class="f-num">3</span><span class="f-meta">75% 接受</span></div>
-        <div class="f-row"><span class="f-name">过保</span><div class="f-track"><div class="f-fill" style="--w:3%"></div></div><span class="f-num">3</span><span class="f-meta">≈100%</span></div>
+      <h3>一周怎么经营一张单</h3>
+      <div class="swimlane">
+        <div class="sw-head">时间</div><div class="sw-head">猎头要做什么</div><div class="sw-head">要客户决定什么</div><div class="sw-head">要候选人确认什么</div><div class="sw-head">留下什么记录</div>
+        <div class="sw-stage">周一</div><div>更新市场、名单与触达优先级</div><div>本周优先级有没有变</div><div>关键人是否仍在窗口期</div><div>单子看板</div>
+        <div class="sw-stage">周中</div><div>完成有效沟通，补全候选人四维判断</div><div>推荐人选是否约聊、哪里不合适</div><div>意向、薪酬、流程与风险是否变化</div><div>候选人评估卡</div>
+        <div class="sw-stage">周五</div><div>用数据复盘损耗和风险，只报需要决策的事</div><div>画像、预算、面试安排、升级路径</div><div>下周动作和可能反悔点</div><div>周报 + 下周计划</div>
       </div>
-      <div class="f-cap">💡 <b>读法</b>：100 个触达最后 ≈3 单过保。哪一层损耗异常放大，就去补哪一层的方法论——比如「有效通话」太低 → 回看打 Call 章节话术；「推荐→面试」太低 → 回看推荐语质量。</div>
-      <div class="callout tip">
-        <span class="tt">📖 整体做单心法</span>
-        ① 拿到职位<b>先分析再搜人</b>，不要"嵌入式工程师"就直接搜；② 渠道匹配效率：基础岗看智联/51job，中端岗谷露+猎聘，高端岗领英/脉脉/转介绍；③ 分阶段推进：先精准后宽泛 → 深度访谈 → 储备关系；④ 每个环节做数据追踪，定期复盘优化。
-      </div>
+      <div class="callout success"><span class="tt">这套 SOP 的实践逻辑</span>先让客户对岗位做决定，再让市场验证客户的想象；先让候选人对机会做决定，再让客户对人做决定。每一次沟通都必须换回一个事实或一个明确动作，否则只是“看起来很努力”。</div>
     
     </section>
     <!-- ===== 一、接单启动 ===== -->
@@ -350,7 +305,7 @@
         </ol>
       </div>
 
-<div class="ops"><div class="ops-title">⚙️ 客户分析 · 照着做（接单第 1 天）</div><p class="ops-sub">从拿到 JD 到 Kickoff 结束，把这张清单走完，这单的成色你已经心里有数。</p><ol><li><b>先查 8 个信息源判断业务阶段：融资轮次 / 招聘量 / 人数变化 / 产品动态 / 高管变动 / 候选人反馈 / 付款条款 / HR 说话方式</b> <a class="out" href="#tpl-client">输出 客户信息卡·阶段栏</a> <span class="time">⏱ 20 分钟</span></li><li><b>填「客户信息卡」：阶段 + 决策链 + 拍板人画像 + 薪酬机制 + 历史周期 + 合作条款，随做单持续更新</b> <a class="out" href="#tpl-client">输出 客户信息卡完整版</a> <span class="time">⏱ 30 分钟</span></li><li><b>Kickoff 时问完「识别真拍板人五问」，特别是最后两问：薪资超带宽谁批？HC 批了吗？</b> <span class="out">输出 五问答案记录</span> <span class="time">⏱ 当面问</span></li><li><b>锁定 1-2 个关键人物（用人经理 + 拍板人），约定每周固定同步节奏</b> <span class="out">输出 沟通节奏约定</span></li><li><b>对照「组织变动红灯清单」过一遍，有红灯立刻做一次确认性沟通</b> <span class="out">输出 红灯记录</span> <span class="time">⏱ 10 分钟</span></li></ol></div>
+<div class="ops"><div class="ops-title">接单先打分：不是什么单都值得全力做</div><p class="ops-sub">猎头最稀缺的不是简历，是可投入的时间。先用 12 分制判断这单能不能做成，再决定投入多少寻访资源。</p><div class="table-wrap"><table><thead><tr><th>判断项</th><th>2 分：可全力投入</th><th>1 分：先验证</th><th>0 分：先暂停</th></tr></thead><tbody><tr><td>HC 与预算</td><td>已批，区间明确</td><td>口头确认，待批</td><td>没有 HC 或预算</td></tr><tr><td>业务问题</td><td>能说清这人 6 个月要解决什么</td><td>方向有，任务不清</td><td>只有一份泛 JD</td></tr><tr><td>拍板与流程</td><td>用人经理、拍板人、轮次明确</td><td>只能对接 HR</td><td>谁决定都说不清</td></tr><tr><td>搜索条件</td><td>薪酬、地点、范围可落地</td><td>有一项待定</td><td>条件互相冲突</td></tr><tr><td>反馈速度</td><td>约定 48 小时内反馈</td><td>无明确 SLA</td><td>历史上长期失联</td></tr><tr><td>合作基础</td><td>费用、回款、保证期已谈清</td><td>条款待补</td><td>条款不合理或回避</td></tr></tbody></table></div><p><b>10–12 分：</b>立刻建寻访小组；<b>7–9 分：</b>只做首批市场验证，不承诺交付时间；<b>6 分及以下：</b>请客户先补信息或暂停。分数不是为了拒绝客户，而是为了不把一张“没准备好”的单做成双方消耗。</p><ol><li><b>Kickoff 只问四件事：</b>这个岗位为什么现在必须招？人到岗后 90 天和 6 个月分别交付什么？谁是最后拍板人？哪些条件绝不让步？ <a class="out" href="#tpl-client">输出 客户信息卡</a></li><li><b>当场约定节奏：</b>推荐后 48 小时是否继续；面试后 24 小时给结论；每周固定 15 分钟校准。没有节奏，就不要承诺“很快有合适的人”。</li><li><b>把风险写下来：</b>替补岗要问上一任为什么走；新增岗要问业务负责人是否真正有资源；组织调整、预算冻结、拍板人缺席，都是暂停信号。</li></ol></div>
       <h3>先看公司：它现在是真的在扩张，还是只是挂着岗位</h3>
       <p>拿到岗位的第一件事不是找人，是判断"这家公司现在处在哪个阶段"。阶段决定一切。</p>
 
@@ -647,11 +602,7 @@
         </ol>
       </div>
 
-<div class="ops"><div class="ops-title">⚙️ 岗位解构 · 照着做（JD 分析 → 画像）</div><p class="ops-sub">把 JD 变成可执行的人才画像，全程约 1-2 小时，别跳过任何一步直接搜人。</p><ol><li><b>四维了解客户与行业：用人偏好 / 企业概况 / 行业趋势 / 竞品动作</b> <span class="out">输出 四维笔记</span> <span class="time">⏱ 30 分钟</span></li><li><b>和 HR 做 Briefing：公司概况 / 职位情况（新增还是替补、上一任为什么走）/ 招聘流程 / HR 团队</b> <span class="out">输出 Briefing 记录</span> <span class="time">⏱ 30 分钟</span></li><li><b>用五步画像法输出人才画像：采集 → 归类 → 分 Must/Nice/伪需求 → 构建 → 验证</b> <a class="out" href="#tpl-profile">输出 人才画像一页纸</a> <span class="time">⏱ 30 分钟</span></li><li><b>深挖「递进五层」：招聘动机 / 显性vs隐性 / 硬性vs软性 / 决策链 / 痛点地图打分</b> <span class="out">输出 痛点优先级矩阵</span> <span class="time">⏱ 20 分钟</span></li><li><b>把画像放进 Search Brief，目标公司列 10-15 家（同产品 / 竞品 / 同渠道 / 同人群）</b> <a class="out" href="#tpl-brief">输出 Search Brief</a> <span class="time">⏱ 20 分钟</span></li><li><b>先用 2-3 个候选人验证画像，根据反馈修正后再大规模搜</b> <a class="out" href="#tpl-profile">输出 画像 v2</a></li></ol></div>
-      <div class="callout tip">
-        <span class="tt">🏆 Offer 黄金公式</span>
-        <b>Offer = 30% 准备及分析 + 30% 搜寻及筛选 + 30% 谈判管理 + 10% 运气</b>。复盘每个 Offer，基本都能归结到这三块哪块做到位、哪块没做到位。缺任何 30% 都会影响成单。
-      </div>
+<div class="ops"><div class="ops-title">把岗位翻译成结果：不要拿着 JD 直接开搜</div><p class="ops-sub">职位名称和任职要求都只是表面。真正要找到的是：谁能在这个组织、这个阶段，把这件事做成。</p><ol><li><b>先写一句成功定义：</b>“这个人向谁负责，要解决什么业务问题，在入职 90 天和 6 个月各交付什么结果。”说不出这句话，画像就还不能开始。</li><li><b>把要求分成三栏：</b><a class="out" href="#tpl-profile">输出 人才画像一页纸</a><br><b>必须有：</b>不具备就无法完成任务的经历或能力；<br><b>可迁移：</b>做过相邻场景、可在入职后补齐的能力；<br><b>绝对不要：</b>会造成失配的行业、管理方式、稳定性或动机风险。</li><li><b>问用人经理，不只问 HR：</b>上一任为什么离开？现在团队最卡哪件事？你愿意为哪一项能力放宽背景？候选人进来后谁会支持、谁可能反对？ <span class="out">输出 关键事实记录</span></li><li><b>把画像变成可搜的范围：</b>目标公司、相邻公司、职级、汇报对象、可接受的跨行业路径和薪酬上限。 <a class="out" href="#tpl-brief">输出 Search Brief</a></li><li><b>用前 5 个有效电话校准：</b>不是急着推荐。记录市场上哪些条件根本找不到、哪些人愿意动、客户最在意什么；带着结论回到客户处改画像，再扩大寻访。</li></ol></div>
 
       <h3>先补最少的背景：别拿着 JD 就开搜</h3>
       <div class="table-wrap">
@@ -1234,117 +1185,94 @@
 
     <section class="section" id="skill-embodied">
 <h2>赛道研究 01 · 具身智能猎头地图</h2>
-      <p class="subtitle">这是独立的行业研究章。接到具身智能岗位时，用它判断公司在什么阶段、钱从哪里来、真正卡在哪，以及该去哪里找人。</p>
+      <p class="subtitle">具身智能不是“把大模型装进机器人”这么简单。猎头接单要先判断：这家公司要把哪项真实工作做掉，客户为什么愿意付钱，它现在卡在模型、机器、现场还是规模化。</p>
 
       <div class="keypoints">
-        <div class="kp-title">猎头视角 · 具身智能一图</div>
+        <div class="kp-title">先按这一条链判断公司</div>
         <ol>
-          <li><b>先判断阶段</b>：公司到底在做 Demo、试点交付，还是已经进入量产爬坡？阶段不同，缺的人完全不同。</li>
-          <li><b>再判断生意</b>：卖整机、卖场景方案、卖零部件、卖数据/模型平台，四种商业模式的痛点和岗位需求不同。</li>
-          <li><b>最后判断壁垒</b>：真正壁垒不在宣传视频，而在数据闭环、可靠性、供应链成本、现场交付能力和场景 ROI。</li>
+          <li><b>任务有 ROI</b>：客户愿意为省人、提产能、降风险或解决缺工付钱，而不是买一个展厅 Demo。</li>
+          <li><b>现场能稳定跑</b>：换物料、光线、节拍和操作员之后，成功率、恢复能力与安全边界仍然站得住。</li>
+          <li><b>能复制和回流</b>：第二个客户更快上线；失败数据进入训练、产品和运维，而不是每次靠驻场工程师救火。</li>
+          <li><b>单位经济成立</b>：交付人天、硬件成本、停机维护和售后成本，不能把项目毛利吃光。</li>
         </ol>
       </div>
 
-      <h3>先读 · 资深猎头看具身智能的总判断</h3>
+      <h3>先分清：具身“大脑”解决什么，没解决什么</h3>
       <div class="embodied-brief">
         <div class="eb-main">
-          <b>一句话结论</b>
-          <p>具身智能 2026 年的核心矛盾不是“机器人会不会动”，而是<b>能不能在真实客户现场稳定、便宜、可复制地干活</b>。所以猎头接单时，先别被人形视频和融资新闻带走，要先判断这家公司处在<b>研究展示、场景试点、批量交付、规模量产</b>哪一段。</p>
+          <b>猎头先别把“人形”和“大脑”混成一件事</b>
+          <p><b>具身大脑</b>负责看懂环境、理解任务、决定下一步动作；<b>本体</b>负责够不够稳、够不够灵活、成本能不能下来；<b>交付系统</b>负责接入客户流程、处理异常、把失败变成下一轮数据。模型演示得好，不代表设备已经能赚钱。</p>
         </div>
         <div class="eb-grid">
-          <div><span>看公司</span><b>有没有真实客户</b><em>客户是否付费、是否复购、是否能说清部署 ROI。</em></div>
-          <div><span>看产品</span><b>是不是可重复交付</b><em>每个项目都重做一遍，就是服务公司，不是平台公司。</em></div>
-          <div><span>看团队</span><b>是否补齐量产与交付</b><em>只招算法不招供应链/可靠性/现场部署，说明还没进 1→100。</em></div>
-          <div><span>看数据</span><b>是否有闭环飞轮</b><em>机器人失败数据能不能回流训练，决定长期壁垒。</em></div>
+          <div><span>模型泛化</span><b>看懂和会做新任务</b><em>不等于换工厂、换物料后仍能稳定工作。</em></div>
+          <div><span>动作控制</span><b>能安全、及时地完成动作</b><em>高层规划和低层控制常常是两套能力。</em></div>
+          <div><span>真实数据</span><b>失败能否变成下一次进步</b><em>只有视频，没有动作与结果数据，壁垒很薄。</em></div>
+          <div><span>客户交付</span><b>能否复制成收入</b><em>第二个项目是否更快、更少人、更高毛利。</em></div>
         </div>
       </div>
 
-      <h3>发展阶段 · 从 Demo 到规模化的四道坎</h3>
-      <p class="subtitle">具身智能不是一个线性增长行业，它每跨一段都会换一批核心人才。猎头最值钱的判断，是识别客户现在到底缺“做出来的人”，还是缺“交付出去的人”。</p>
+      <h3>公司走到哪一步，决定该找哪种人</h3>
+      <p class="subtitle">不要先听“我们要量产”。看它刚刚跨过哪道坎、下一道坎是什么；这比公司给岗位起什么名字可靠得多。</p>
       <div class="table-wrap">
         <table class="tight">
-          <thead><tr><th>阶段</th><th>行业状态</th><th>公司最痛的事</th><th>真正要招的人</th><th>猎头判断问题</th></tr></thead>
+          <thead><tr><th>公司所处状态</th><th>已经证明了什么</th><th>下一个硬问题</th><th>这时该招谁</th><th>接单时直接问</th></tr></thead>
           <tbody>
-            <tr><td><b>0→0.5 研究展示</b></td><td>能跑 Demo，视频好看，客户多为参观/试用</td><td>技术路线没收敛，真机样本少，泛化差</td><td>VLA/RL 研究员、仿真、运动控制、机器人博士</td><td>“Demo 是遥操、脚本、仿真，还是真自主？”</td></tr>
-            <tr><td><b>0.5→1 场景试点</b></td><td>进入工厂/仓储/零售/实验室做 PoC</td><td>现场一换就翻车，系统接不进客户流程</td><td>现场部署工程师、视觉力控、系统集成、数据采集</td><td>“这个 PoC 客户付费了吗？验收指标是什么？”</td></tr>
-            <tr><td><b>1→10 批量交付</b></td><td>有标杆客户，开始复制到同类场景</td><td>交付成本高，项目制太重，毛利被人天吃掉</td><td>解决方案负责人、交付 PM、可靠性、数据平台、FAE</td><td>“第二个客户的部署周期比第一个缩短了吗？”</td></tr>
-            <tr><td><b>10→100 规模量产</b></td><td>硬件起量，供应链、良率、售后成为主战场</td><td>BOM 降不下、良率不稳、售后维护吞利润</td><td>供应链、DFM、质量、测试、量产工艺、售后体系负责人</td><td>“BOM、良率、MTBF、产能爬坡计划分别是多少？”</td></tr>
+            <tr><td><b>研究 / Demo</b></td><td>某些任务能完成，常在可控环境</td><td>动作数据不够、路线未收敛、复杂环境会失效</td><td>VLA / 机器人学习、仿真、控制、数据采集</td><td>“这段演示里，哪些环节是自主完成的？失败时怎么恢复？”</td></tr>
+            <tr><td><b>闭环试点</b></td><td>进入一个真实场景，有明确验收任务</td><td>环境变化、异常处理、系统接入与数据回流</td><td>机器人系统、视觉力控、现场部署、测试可靠性、数据闭环</td><td>“客户付费了吗？验收指标、人工介入率和失败回放怎么记录？”</td></tr>
+            <tr><td><b>可复制交付</b></td><td>同类客户能复用，不再完全从零开始</td><td>缩短部署、人天与维护成本，形成标准产品</td><td>解决方案、FDE / 应用工程、交付 PM、产品化、远程运维</td><td>“第二个项目比第一个少了多少驻场、人天和上线时间？”</td></tr>
+            <tr><td><b>规模化制造</b></td><td>产品和订单可预期，需要稳定交付更多设备</td><td>良率、BOM、供应链、售后和质量体系</td><td>DFM、质量、供应链、测试、制造、售后服务</td><td>“BOM、良率、MTBF、备件与售后 SLA 现在分别是谁负责？”</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="callout warn"><span class="tt">专业提醒</span>很多客户嘴上说“马上量产”，JD 却全是“前沿算法、SOTA、世界模型”，这说明它还在 0→1。真正进入 1→100 的公司，JD 里一定会出现 <b>BOM、良率、MTBF、DFM、产线、售后、交付 SLA</b> 这些词。</div>
+      <div class="callout warn"><span class="tt">不要被 JD 误导</span>嘴上说“量产”、岗位全招世界模型和 SOTA 研究员，多半仍在前两段；真正进入复制和量产后，JD 会出现<b>验收、故障恢复、部署周期、BOM、良率、MTBF、备件、售后</b>。</div>
 
-      <h3>商业模式 · 四类公司、四种痛点、四套挖人逻辑</h3>
-      <p class="subtitle">具身智能公司的商业模式决定它到底需要什么人才。不要只按“机器人公司”找人，先问它靠什么收钱。</p>
+      <h3>公司靠什么赚钱，壁垒就长在哪里</h3>
       <div class="table-wrap">
         <table class="tight">
-          <thead><tr><th>模式</th><th>怎么赚钱</th><th>商业痛点</th><th>真正壁垒</th><th>关键岗位</th></tr></thead>
+          <thead><tr><th>业务类型</th><th>客户买的是什么</th><th>最容易卡住的地方</th><th>真正的壁垒</th><th>优先人才</th></tr></thead>
           <tbody>
-            <tr><td><b>卖整机</b><br>人形/四足/轮式/机械臂</td><td>硬件出货 + 维保 + 软件订阅</td><td>前期毛利低，售后重，量产前现金流压力大</td><td>供应链、BOM 控制、可靠性、品牌渠道</td><td>整机负责人、供应链、质量、结构、运动控制、售后服务</td></tr>
-            <tr><td><b>卖场景方案</b><br>工厂/仓储/零售/实验室</td><td>项目交付费 + 运维费 + 后续扩点</td><td>项目制重，每个客户都要调，毛利容易被交付吃掉</td><td>场景 Know-how、部署方法论、客户流程集成能力</td><td>解决方案、FDE/部署工程师、集成 PM、行业专家、FAE</td></tr>
-            <tr><td><b>卖核心零部件</b><br>关节/灵巧手/传感器/电机</td><td>B2B 供货，跟随整机厂放量</td><td>客户集中、压价强、技术路线变化会导致库存风险</td><td>工艺良率、成本、性能参数、客户认证周期</td><td>关节模组、精密制造、微型电机、触觉、可靠性测试</td></tr>
-            <tr><td><b>卖数据/模型/平台</b><br>VLA、遥操数据、训练平台</td><td>授权费、API/平台订阅、数据服务、联合开发</td><td>客户愿不愿意为“智能”单独付费还不稳定</td><td>真实操作数据、模型迭代速度、部署生态、算力成本</td><td>VLA/RL、数据平台、仿真、模型压缩、端侧部署</td></tr>
+            <tr><td><b>本体 / 整机</b></td><td>设备、维保、软件服务</td><td>成本、可靠性、量产和售后</td><td>可制造性、供应链、稳定运行、渠道</td><td>结构、控制、质量、制造、供应链、售后</td></tr>
+            <tr><td><b>场景方案</b></td><td>一个任务的自动化结果</td><td>项目过重、现场改造多、毛利被人天吃掉</td><td>场景 Know-how、部署方法、客户流程集成</td><td>解决方案、机器人部署、集成 PM、行业专家</td></tr>
+            <tr><td><b>核心部件</b></td><td>性能、成本、稳定供货</td><td>认证周期长、客户集中、被压价</td><td>工艺、良率、性能与认证</td><td>关节、灵巧手、传感器、可靠性、精密制造</td></tr>
+            <tr><td><b>具身大脑 / 数据平台</b></td><td>更快学会新任务、降低部署成本</td><td>谁为“智能”单独付费，数据能否持续进入系统</td><td>动作数据、跨场景迁移、边缘部署、生态接口</td><td>VLA、机器人学习、仿真、数据引擎、端侧推理</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="callout tip"><span class="tt">猎头接单判断</span><b>卖整机</b>看量产能力，<b>卖方案</b>看交付毛利，<b>卖零部件</b>看客户认证和良率，<b>卖平台</b>看数据闭环和客户付费意愿。客户说不清自己靠什么赚钱，岗位优先级也往往说不清。</div>
+      <div class="callout tip"><span class="tt">猎头的判断重点</span>“算法领先”不是结论。要追问：<b>领先在哪个任务、哪种本体、什么环境；换了场景要补多少数据；失败由谁接住；客户为哪一项结果付钱。</b></div>
 
-      <h3>核心壁垒 · 别被“算法领先”四个字糊弄</h3>
-      <div class="moat-grid">
-        <div class="moat"><span>01</span><b>真实数据闭环</b><em>不是收集视频，而是“失败动作 → 标注 → 训练 → 重新部署”的闭环。没有失败数据，模型永远长不大。</em></div>
-        <div class="moat"><span>02</span><b>工业级可靠性</b><em>Demo 成功率 90% 没意义，客户要的是每天上万次动作稳定。最后 5%-10% 的可靠性最贵。</em></div>
-        <div class="moat"><span>03</span><b>供应链与成本</b><em>关节、灵巧手、传感器、减速器决定 BOM。硬件降本不成立，商业化就只能停在试点。</em></div>
-        <div class="moat"><span>04</span><b>现场部署组织</b><em>具身不是纯软件，必须有人进现场接 PLC、MES、治具、工艺、SOP。交付团队就是商业化发动机。</em></div>
-        <div class="moat"><span>05</span><b>场景 ROI 选择</b><em>不是能做什么就卖什么，而是先选客户愿意为稳定性、换产、缺工付钱的场景。</em></div>
-      </div>
-
-      <h3>商业化痛点 · 为什么很多公司 Demo 很强、生意很难</h3>
+      <h3>美国具身大脑：五条路线，五种闭环</h3>
+      <p class="subtitle">以下是公开资料能看到的技术与推进方向，不把公开视频、融资或合作公告等同于规模化商业成功。它们的价值，是帮助猎头识别一家公司在押注哪一种数据和部署闭环。</p>
       <div class="table-wrap">
         <table class="tight">
-          <thead><tr><th>痛点</th><th>表现</th><th>对招聘的影响</th><th>猎头怎么验证</th></tr></thead>
+          <thead><tr><th>路线 / 公司</th><th>“大脑”在赌什么</th><th>公开进展意味着什么</th><th>还必须证明什么</th><th>对寻访的启发</th></tr></thead>
           <tbody>
-            <tr><td><b>ROI 不清</b></td><td>客户觉得新奇，但算不清多久回本</td><td>需要行业解决方案和售前顾问，不只是算法</td><td>问“客户买单是为了省人、省换产、提良率，还是做样板？”</td></tr>
-            <tr><td><b>交付太重</b></td><td>一个项目派 5-10 人驻场数月</td><td>需要交付 PM、FDE、现场集成，且要压缩人天</td><td>问“第二个项目能复用多少？部署周期缩短多少？”</td></tr>
-            <tr><td><b>可靠性不足</b></td><td>实验室能跑，客户现场灯光/物料/人流一变就掉线</td><td>需要可靠性、测试、数据闭环、现场调优人才</td><td>问“失败案例怎么回流？有没有专门 failure review？”</td></tr>
-            <tr><td><b>硬件维护贵</b></td><td>设备坏一次，客户停线；售后成本吃掉毛利</td><td>需要质量、售后、供应链和远程诊断体系</td><td>问“MTBF、备件体系、远程诊断做了吗？”</td></tr>
-            <tr><td><b>客户预算错配</b></td><td>人形故事估值高，但客户只愿按自动化设备付费</td><td>需要商务能讲清价值，不然高薪研发养不起</td><td>问“客户按设备买、按项目买，还是按结果付费？”</td></tr>
+            <tr><td><b>Figure · Helix</b><br>自有本体 + VLA</td><td>把语义理解和高速动作控制做成闭环，优先服务自己的机器人。</td><td>Helix 公开采用高层视觉语言模型与 200Hz 低层动作策略的分层设计，并面向整个人形上半身控制。<a href="https://www.figure.ai/news/helix" target="_blank" rel="noreferrer">来源</a></td><td>从单个任务到更多客户现场：稳定性、维护、部署速度与数据回流能否一起放大。</td><td>找做过<b>真机 VLA、传感器/手部数据、控制与现场可靠性</b>的人，不只看“人形”标签。</td></tr>
+            <tr><td><b>Physical Intelligence · π₀</b><br>跨本体基础策略</td><td>用多类机器人动作数据训练可迁移的操作策略，而不绑定一副身体。</td><td>π₀ 公开描述使用多种机器人本体数据与视觉语言预训练，核心是把语义和动作连接起来。<a href="https://www.physicalintelligence.company/blog/pi0" target="_blank" rel="noreferrer">来源</a></td><td>换一台机器、一个任务或一个客户，要补多少真机数据；能否形成付费部署而非研究展示。</td><td>看<b>跨本体数据、模仿学习、仿真到真机、真实世界评测</b>，别只看模型名称或论文。</td></tr>
+            <tr><td><b>Skild AI · Skild Brain</b><br>硬件无关平台</td><td>用仿真、互联网视频和目标真机数据，做能适配多类机器人的层级策略。</td><td>Skild 公开描述其模型覆盖四足、人形、桌面臂、移动操作等形态，并以高低频策略分层控制。<a href="https://www.skild.ai/blogs/building-the-general-purpose-robotic-brain" target="_blank" rel="noreferrer">来源</a></td><td>“跨本体”是否真的减少部署周期；每换一种硬件和场景需要多少定制。</td><td>重点找<b>仿真、迁移学习、机器人控制、平台集成</b>的复合人才，核实是否真的做过交付。</td></tr>
+            <tr><td><b>Google DeepMind · Gemini Robotics</b><br>推理层 + 动作层</td><td>把空间理解、任务推理和机器人动作拆成可组合的能力层。</td><td>Gemini Robotics 公开定位为让模型理解物理环境、行动并对变化作出反应的机器人模型。<a href="https://deepmind.google/blog/gemini-robotics-brings-ai-into-the-physical-world/" target="_blank" rel="noreferrer">来源</a></td><td>能力如何被打包给不同本体与客户使用；延迟、安全、评测与系统集成是否可产品化。</td><td>可对标<b>空间推理、具身 Agent、VLA、边缘推理、安全评测</b>岗位，而不是只找通用 LLM 研究员。</td></tr>
+            <tr><td><b>1X · World Model</b><br>家庭数据与运营</td><td>把家庭中的成功、失败和人机协作变成训练数据，服务非结构化环境。</td><td>1X 公开把 World Model 描述为从视频、第一视角与机器人传感器数据中学习行动。<a href="https://www.1x.tech/discover/world-model-self-learning" target="_blank" rel="noreferrer">来源</a></td><td>家庭安全、远程协作、用户信任与单位经济；有数据不等于已经自主规模化。</td><td>找<b>世界模型、遥操 / 数据运营、失败分析、安全与用户现场运营</b>的人，区分“采数”与“可自主交付”。</td></tr>
           </tbody>
         </table>
       </div>
-
-      <div class="callout"><span class="tt">📌 接具身单子的三问</span>① <b>客户处在哪个阶段？</b>Demo / PoC / 批量交付 / 量产。② <b>它靠什么收钱？</b>整机 / 方案 / 零部件 / 平台。③ <b>它当前最大瓶颈是什么？</b>数据、可靠性、成本、交付、ROI。三问答不清，先别开搜。</div>
-
-      <h3>美国对标 · 看路径，不只看估值</h3>
-      <p class="subtitle">美国样本的意义不是照搬公司名单，而是看清三条不同的商业化路线：<b>先用工业现场验证、先进入家庭拿数据、先做模型层能力</b>。候选人和客户的可迁移性，取决于他在哪条路线里创造过可复用结果。</p>
-      <div class="table-wrap">
-        <table class="tight">
-          <thead><tr><th>公司 / 路线</th><th>公开进展</th><th>真正验证的能力</th><th>对中国猎头的对标意义</th></tr></thead>
-          <tbody>
-            <tr><td><b>Figure</b><br>工业人形</td><td>官方披露 F.02 在 BMW Spartanburg 完成约 11 个月部署、1,250+ 小时运行，并参与 30,000+ 辆 X3 的生产。<a href="https://www.figure.ai/news/production-at-bmw" target="_blank" rel="noreferrer">来源</a></td><td>不是“会走路”，而是把单一工序拉进真实产线，验证运行时长、节拍、现场运维与客户协同。</td><td>对标的是<b>工业交付型本体公司</b>：优先找做过工厂部署、可靠性、制造工程和现场集成的人，而非只看人形 Demo 背景。</td></tr>
-            <tr><td><b>1X</b><br>家庭人形</td><td>NEO 面向家庭发布并开放预订，交付节奏仍取决于公司后续兑现。<a href="https://www.1x.tech/discover/neo-home-robot" target="_blank" rel="noreferrer">来源</a></td><td>家庭是非结构化场景：真正的难题是安全、远程运营、用户体验和持续数据回流，不是单次演示。</td><td>对标的是<b>消费级数据飞轮</b>：要重点判断遥操/数据运营/安全团队是否和模型团队形成闭环，别把“预售”误当“规模化收入”。</td></tr>
-            <tr><td><b>Physical Intelligence</b><br>机器人基础模型</td><td>π₀ 公开说明使用跨 8 类机器人平台的灵巧操作数据，并以 VLM 预训练叠加动作模型。<a href="https://www.physicalintelligence.company/blog/pi0" target="_blank" rel="noreferrer">来源</a></td><td>模型层的核心不是模型名称，而是跨本体数据、微调效率与泛化能力。</td><td>对标的是<b>模型 / 数据平台公司</b>：核心人才来自 VLA、真机数据、仿真和部署优化；必须问清是否拥有持续真机数据，而不是只有 benchmark。</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="callout tip"><span class="tt">对标结论</span>Figure 证明“先把一个工业任务跑稳”；1X 代表“在非结构化环境里拿数据与运营能力”；Physical Intelligence 代表“用跨本体数据做通用策略”。三者都还不能替代中国公司的客户、供应链和交付判断，但能帮助你识别一家公司的<b>主战场与真实人才缺口</b>。</div>
+      <div class="callout"><span class="tt">接具身单，最后用五个问题收口</span>① 客户付钱买的具体任务是什么？② 换场景后成功率、人工介入率和恢复时间如何？③ 新任务 / 新本体要补多少数据？④ 失败数据怎么回流到模型、产品和运维？⑤ 第二个客户的部署周期与毛利有没有改善？<b>答不清，就先按探索型单子管理，不按规模化扩编开搜。</b></div>
 
       <details class="deep-reference">
         <summary>展开行业技术资料库：硬件层级、机械臂专题、岗位话术与案例</summary>
         <div class="deep-reference-body">
 
-      <!-- 一、赛道速写 -->
-      <h3>一、赛道速写：2 分钟看懂具身智能</h3>
-      <p><b>定义</b>：把 AI 的"大脑"装进机器人的"身体"，让智能体在物理世界里感知→决策→行动。不是"做个能动的机器"，是"做个能自己判断该不该动、怎么动的机器"。</p>
+      <!-- 一、基础概念 -->
+      <h3>一、基础概念：看候选人时先对齐语言</h3>
+      <p><b>具身智能</b>是让机器在物理环境中感知、判断并行动；<b>具身大脑</b>通常指感知、规划与策略模型，不等于整机。候选人说“泛化”时，必须继续问清：他讲的是看懂新物体、完成新任务、换场景稳定运行，还是换一副本体还能迁移——四者难度和价值完全不同。</p>
 
-      <div class="callout tip"><span class="tt">💡 猎头怎么一句话讲清楚这个赛道给候选人</span>"具身智能简单说就是让机器人不再是被程序控制的，而是自己能看、能想、能动手。你现在做的如果是传统机器人控制，往具身转就是把你的控制经验跟 AI 结合起来——这是现在最热的方向。"</div>
+      <div class="callout tip"><span class="tt">猎头怎么和候选人聊这个行业</span>“我不想只问你做的模型叫什么。我更想知道：它控制哪一种机器人、在什么环境跑、换任务时需要补多少数据、失败后谁来恢复，以及这些失败怎么回到下一版模型。”这几句比泛聊“世界模型”更容易分出研究、工程和交付经验。</div>
 
       <table>
-        <thead><tr><th>猎头要关注的维度</th><th>当前状态</th><th>对寻访的影响</th></tr></thead>
+        <thead><tr><th>常见说法</th><th>真正要问的含义</th><th>对应的人才判断</th></tr></thead>
         <tbody>
-          <tr><td>阶段</td><td>2026 进入"部署落地元年"——行业重心从身体能力转向智能决策</td><td>别只盯硬件的人了，算法+数据的人才是下一波稀缺资源</td></tr>
-          <tr><td>钱往哪流</td><td>本体公司融资已过高峰期，零部件和大脑层融资活跃</td><td>融资热=招聘热，钱到哪人到哪</td></tr>
-          <tr><td>谁在抢人</td><td>头部本体公司+大厂研究院+初创公司三方抢同一批人</td><td>候选人手里通常有 2-3 个 offer，拼的是你的信息差和速度</td></tr>
-          <tr><td>技术路线分歧</td><td>端到端（一个模型控一切）vs 模块化（分层控制），仿真 vs 真机训练</td><td>路线分歧=人才不互通。端到端派的人不会去模块化派的公司</td></tr>
+          <tr><td>端到端 / VLA</td><td>模型从视觉和语言直接输出动作；低层安全与控制怎么处理？</td><td>看真机数据、动作空间、延迟和失败恢复，而不只看模型名。</td></tr>
+          <tr><td>跨本体泛化</td><td>换机械臂、移动底盘或人形后，要重新采多少数据、调多少参数？</td><td>区分“演示过多硬件”与“真正缩短部署周期”。</td></tr>
+          <tr><td>世界模型 / 视频预训练</td><td>视频里的语义怎样落到可执行动作，如何被真机数据校正？</td><td>看是否做过动作标注、遥操、仿真和实机闭环。</td></tr>
+          <tr><td>具身 Agent</td><td>高层任务规划和低层控制如何协同，异常由谁接住？</td><td>找规划、系统、控制和安全能说清接口边界的人。</td></tr>
         </tbody>
       </table>
 
@@ -2258,70 +2186,100 @@
 
     <section class="section" id="skill-llm">
 <h2>赛道研究 02 · 大模型猎头地图</h2>
-      <p class="subtitle">大模型单要先回答一件事：<b>客户是在卖模型能力，还是在把能力嵌进客户的工作流并拿到持续收入</b>。前者靠算力、数据和研发；后者靠可靠性、私有化、集成与交付。</p>
+      <p class="subtitle">大模型单不能只问“模型强不强”。猎头要先判断：公司卖的是调用能力、软件席位、工作流结果还是项目服务；然后看它卡在成本、可靠性、权限、集成还是客户采用。</p>
 
       <div class="keypoints">
-        <div class="kp-title">猎头视角 · 大模型一图</div>
+        <div class="kp-title">先按“模型到收入”的链条判断公司</div>
         <ol>
-          <li><b>先看收入形态</b>：模型 API、企业席位、平台订阅、项目交付或结果分成，决定了客户真正要招研究员、平台工程师还是部署团队。</li>
-          <li><b>再看落地门槛</b>：企业能否把数据接进来、把权限管起来、把错误兜住、把成本压下来，决定收入能否从试点变复购。</li>
-          <li><b>最后看岗位耐久度</b>：单纯调用模型的能力会被快速商品化；评测、推理优化、工作流设计、领域数据与客户部署会越来越重要。</li>
+          <li><b>模型能力</b>：模型是否真的带来效果差异，推理成本能否承受。</li>
+          <li><b>工作流可用</b>：工具、权限、知识和人工兜底接进来，任务才不只是聊天演示。</li>
+          <li><b>客户敢上线</b>：错误能定位、结果能评测、数据能治理、责任边界能说清。</li>
+          <li><b>收入可复制</b>：第二个客户更快上线、更少定制、更高续费；否则本质仍是项目服务。</li>
         </ol>
       </div>
 
-      <h3>先读 · 大模型公司的四层生意</h3>
+      <h3>先看这家公司靠哪一层赚钱</h3>
       <div class="table-wrap">
         <table class="tight">
-          <thead><tr><th>生意层</th><th>怎么收钱</th><th>真正壁垒</th><th>当前优先岗位</th></tr></thead>
+          <thead><tr><th>公司在卖什么</th><th>客户为什么付钱</th><th>最常见的卡点</th><th>真正壁垒</th><th>优先人才</th></tr></thead>
           <tbody>
-            <tr><td><b>模型与推理</b></td><td>API、模型授权、算力服务</td><td>训练与推理效率、数据、模型能力、开发者生态</td><td>后训练、推理优化、ML Infra、模型评测</td></tr>
-            <tr><td><b>企业工作台</b></td><td>按席位 / 用量订阅</td><td>安全、权限、连接器、用户日活与组织推广</td><td>平台工程、身份权限、安全、产品增长、解决方案</td></tr>
-            <tr><td><b>Agent 平台</b></td><td>平台订阅、执行量、开发者生态</td><td>工具调用可靠性、评测、编排、可观测性</td><td>Agent 工程、Eval、工作流 / 后端、开发者产品</td></tr>
-            <tr><td><b>行业应用与交付</b></td><td>项目费、年费、实施服务、续费</td><td>领域数据、流程 Know-how、系统集成、客户成功</td><td>行业产品、RAG / 知识工程、FDE、交付 PM、AI 安全</td></tr>
+            <tr><td><b>模型 / 推理能力</b></td><td>API、授权、私有部署、算力用量</td><td>模型差异不够大，推理成本压不住</td><td>训练数据、后训练、推理效率、开发者生态</td><td>后训练、推理优化、ML Infra、模型评测</td></tr>
+            <tr><td><b>企业工作台</b></td><td>席位或组织订阅</td><td>客户数据接不进来，管理员不敢放开用</td><td>权限、连接器、审计、组织采用与日活</td><td>企业产品、身份权限、安全、连接器、客户成功</td></tr>
+            <tr><td><b>Agent 平台</b></td><td>平台订阅、执行量、开发者生态</td><td>多步任务失败、工具调用不稳、成本不可控</td><td>评测、编排、可观测性、降级与人工接管</td><td>Agent 工程、Eval、后端平台、开发者产品</td></tr>
+            <tr><td><b>行业工作流</b></td><td>年费、结果收费、实施与续费</td><td>每个客户都要重做，业务部门不改变原流程</td><td>行业数据、流程设计、系统集成、交付方法</td><td>行业产品、知识工程、解决方案、FDE、交付 PM</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h3>美国对标 · 大模型的胜负转向“用起来”</h3>
+      <h3>瓶颈在哪，招聘就该往哪走</h3>
       <div class="table-wrap">
         <table class="tight">
-          <thead><tr><th>公司 / 路线</th><th>公开信号</th><th>商业化判断</th><th>中国猎头该对标什么人才</th></tr></thead>
+          <thead><tr><th>客户眼下的问题</th><th>不要误招成</th><th>真正需要的人</th><th>候选人必须交代的结果</th></tr></thead>
           <tbody>
-            <tr><td><b>OpenAI</b><br>模型 + 企业工作台</td><td>官方称 2025 年已有超过 100 万付费企业客户，并把公司知识、连接器和工作流接入作为企业产品重点。<a href="https://openai.com/index/1-million-businesses-putting-ai-to-work/" target="_blank" rel="noreferrer">来源</a></td><td>从“卖模型”向“进入企业数据与日常工作流”延伸；模型能力之外，组织级部署能力决定复购。</td><td>企业产品、连接器 / 权限、解决方案、客户成功、AI 治理与评测。</td></tr>
-            <tr><td><b>Anthropic</b><br>安全企业版 + Coding Agent</td><td>其企业计划提供 SSO、SCIM、审计日志等控制项；Claude Code 已被纳入 Team / Enterprise 体系。<a href="https://support.anthropic.com/en/articles/9797531-what-is-the-claude-enterprise-plan" target="_blank" rel="noreferrer">来源</a></td><td>不是只卖更强的模型，而是把安全、管理员控制和开发流程做成采购理由。</td><td>安全合规、开发者工具、企业平台、Agent 评测与工程效率人才。</td></tr>
-            <tr><td><b>Meta Llama</b><br>开放模型生态</td><td>Llama 4 持续提供面向推理与 Agent 的开放开发资源。<a href="https://ai.meta.com/llama/responsible-use-guide/" target="_blank" rel="noreferrer">来源</a></td><td>开放权重会压低模型调用门槛，应用公司若没有数据、工作流和客户关系，容易被替代。</td><td>模型适配、私有部署、推理工程、行业知识工程与生态合作人才。</td></tr>
+            <tr><td><b>单次调用太贵 / 太慢</b></td><td>泛后端或只会调模型的人</td><td>推理优化、模型服务、GPU 调度、成本工程</td><td>吞吐、延迟、单位任务成本，以及成本变化后质量是否守住。</td></tr>
+            <tr><td><b>结果不稳定 / 出错不可控</b></td><td>“再调一调 Prompt”的单点角色</td><td>Eval、检索与 Grounding、Agent 可靠性、安全、人工兜底设计</td><td>任务成功率、主要失败类型、重试/降级/人工接管如何工作。</td></tr>
+            <tr><td><b>客户数据和系统接不进去</b></td><td>只做前端体验的 AI PM</td><td>连接器、身份权限、企业平台、安全合规、解决方案架构</td><td>接过哪些系统，权限怎么管，谁能审计，私有化如何落地。</td></tr>
+            <tr><td><b>每个客户都要定制</b></td><td>继续堆研究员或把项目经理改名产品经理</td><td>行业产品、工作流设计、实施、FDE、客户成功</td><td>第二个客户上线是否更快；哪些配置已产品化；客户是否续费。</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="callout tip"><span class="tt">市场信号</span>Anthropic 对企业 API 使用的研究显示，企业使用更偏自动化和专业任务，而不是泛聊天。<a href="https://www.anthropic.com/research/anthropic-economic-index-september-2025-report" target="_blank" rel="noreferrer">来源</a> 对猎头而言，这意味着需求正从“会调模型”转向“能把任务接入系统、量化效果并稳定交付”。</div>
 
-      <h3>接大模型单前的四问</h3>
+      <h3>美国对标：模型、平台、垂直应用是三门不同生意</h3>
+      <p class="subtitle">不要把所有美国 AI 公司都叫“大模型公司”。基础模型公司卖通用能力；企业平台公司解决数据、权限和落地；垂直公司把行业内容、评测和工作流做成可采购的结果。它们会合作，也会竞争，但对应的人才池不同。</p>
+      <div class="table-wrap">
+        <table class="tight">
+          <thead><tr><th>层级 / 公司</th><th>在产业链里做什么</th><th>公开信号</th><th>真正要验证的商业问题</th><th>对标招聘方向</th></tr></thead>
+          <tbody>
+            <tr><td><b>基础模型：OpenAI</b><br>模型 + 企业部署</td><td>提供模型、工具与企业部署能力，向客户日常工作流延伸。</td><td>OpenAI 的企业页面强调部署团队会连接企业系统、推动组织采用，并聚焦可靠性、安全、治理与 ROI。<a href="https://openai.com/business/why-openai/enterprises/" target="_blank" rel="noreferrer">来源</a></td><td>模型能力能否稳定变成组织级使用和持续预算，而不是一次性试点。</td><td>后训练、推理、企业产品、解决方案、FDE、权限 / 连接器、AI 治理。</td></tr>
+            <tr><td><b>基础模型：Anthropic</b><br>模型 + 可信企业能力</td><td>以 Claude 模型和企业控制能力进入高要求的知识工作与开发流程。</td><td>其企业版提供 SSO、SCIM、审计日志、角色权限等控制项。<a href="https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan" target="_blank" rel="noreferrer">来源</a></td><td>安全、可控和可审计能否成为明确采购理由，并支持大规模使用。</td><td>模型安全、企业平台、开发者工具、Agent Eval、工程效率与合规。</td></tr>
+            <tr><td><b>基础模型：Google</b><br>Gemini + 云分发</td><td>把多模态模型与云、数据和开发平台结合，服务已有企业技术栈。</td><td>Google Cloud 的 Gemini Enterprise Agent Platform 将模型选择、企业数据、Agent 构建、评测、治理与部署放在同一平台。<a href="https://cloud.google.com/vertex-ai" target="_blank" rel="noreferrer">来源</a></td><td>企业是否会因已有云、数据和安全体系而更快采用，而非只比较模型榜单。</td><td>多模态、云平台、数据工程、解决方案架构、行业交付。</td></tr>
+            <tr><td><b>开放模型：Meta Llama</b><br>开放生态</td><td>降低模型适配、私有部署和生态创新的门槛。</td><td>Llama 提供开放模型与开发资源。<a href="https://ai.meta.com/llama/" target="_blank" rel="noreferrer">来源</a></td><td>底层模型可替换时，应用公司靠什么留下客户。</td><td>模型适配、私有部署、推理工程、行业产品、知识工程与生态合作。</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>专业场景的真正竞争：谁能把模型变成可负责的工作结果</h4>
+      <div class="table-wrap">
+        <table class="tight">
+          <thead><tr><th>公司 / 类型</th><th>核心路径</th><th>公开进展与边界</th><th>猎头该怎么读</th></tr></thead>
+          <tbody>
+            <tr><td><b>Harvey</b><br>法律 AI 创业公司</td><td>在法律、税务和专业服务场景，把基础模型、法律内容、复杂工作流和专业评测组合起来。</td><td><b>不是 OpenAI 分拆公司。</b>Harvey 官方披露，其融资曾有 OpenAI / OpenAI Startup Fund 参与；同时与 OpenAI 做过面向法律专业人士的定制模型合作。<a href="https://www.harvey.ai/blog/harvey-raises-series-e" target="_blank" rel="noreferrer">融资来源</a> <a href="https://openai.com/index/harvey/" target="_blank" rel="noreferrer">模型合作来源</a></td><td>法律 AI 的壁垒不是“会问模型”，而是<b>权威法律内容、可追溯引用、律师评测、保密与事务所工作流</b>。优先找法律产品、知识工程、Eval、文档工作流、安全与客户实施人才。</td></tr>
+            <tr><td><b>Thomson Reuters · CoCounsel</b><br>内容型法律科技龙头</td><td>把 Westlaw、Practical Law 等权威内容、专业编辑和工作流接入 GenAI。</td><td>CoCounsel 公开强调以权威法律内容和客户自身知识为基础，输出带引用的研究、分析和起草结果；其产品亦结合多家前沿模型能力。<a href="https://legal.thomsonreuters.com/en/products/cocounsel-legal" target="_blank" rel="noreferrer">产品来源</a> <a href="https://www.thomsonreuters.com/en/press-releases/2024/august/thomson-reuters-unveils-cocounsel-2-0" target="_blank" rel="noreferrer">模型来源</a></td><td>这是<b>存量专业内容 + 分发渠道</b>的路线。对标时找懂内容产品、法律数据、质量审核、企业客户成功的人，而非只找通用 Agent 工程师。</td></tr>
+            <tr><td><b>Cursor</b><br>开发者工作流产品</td><td>把多个基础模型接进代码上下文、IDE 和工程团队协作，而不是自己训练前沿模型。</td><td>Cursor 企业版提供代码库上下文、多模型接入、SSO / SCIM、审计和 AI 使用分析等能力。<a href="https://www.cursor.com/enterprise" target="_blank" rel="noreferrer">来源</a></td><td>它说明垂直应用的壁垒可以是<b>上下文、交互入口、团队采用与安全控制</b>。优先看开发者产品、代码检索 / RAG、Agent 安全、DevEx 和企业落地。</td></tr>
+            <tr><td><b>Databricks</b><br>受治理的数据与 Agent 平台</td><td>让企业在受权限和治理约束的数据上构建、评测和运营 Agent。</td><td>Databricks 将数据工程、受治理访问、多 Agent 编排和模型服务放在同一平台，强调资产和组件的复用。<a href="https://www.databricks.com/sites/default/files/2026-04/2026-04-WP-AI-Agents-in-FinServ_R3.pdf" target="_blank" rel="noreferrer">来源</a></td><td>它代表的是“客户已有数据资产如何变成 AI 能力”。人才重点是数据平台、治理、评测、Agent 运行与解决方案，而非只扩模型团队。</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout tip"><span class="tt">法律 AI 这一类单子怎么接</span>先问五件事：① 用的是哪些权威数据，是否能追溯来源；② 哪些任务必须有人审；③ 评测由谁定义、多久更新；④ 如何接入文档库、DMS 和权限体系；⑤ 客户按席位、模块、案件还是服务费付钱。<b>没有内容、评测和工作流三件套，只是通用模型的一个包装层。</b></div>
+
+      <h3>接大模型单前，先把这五件事问清</h3>
       <div class="keypoints">
-        <div class="kp"><b>① 收入</b>：客户按 API、席位、项目，还是结果收费？没有可复购的收费单元，就先别把岗位当长期扩编。</div>
-        <div class="kp"><b>② 可靠性</b>：任务成功率、人工兜底、错误回放与 Eval 怎么做？只讲 Prompt 不讲监控，通常还在 Demo。</div>
-        <div class="kp"><b>③ 数据与合规</b>：客户数据如何接入、谁有权限、能否私有部署？这是大客户从试点到采购的门槛。</div>
-        <div class="kp"><b>④ 交付效率</b>：第二个客户的上线周期能否明显更短？不能复用，就该找 FDE / 解决方案人才，而非继续堆算法。</div>
+        <div class="kp"><b>① 谁付钱，按什么付</b>：API、席位、项目、结果还是年服务费？没有可复购收费单元，就别把一张项目单当长期扩编。</div>
+        <div class="kp"><b>② 任务怎么验收</b>：哪个任务、什么成功率、谁来兜底、错误如何回放？只讲模型效果、不讲 Eval 和责任边界，通常还停在 Demo。</div>
+        <div class="kp"><b>③ 客户系统能否接入</b>：数据从哪来，权限怎么分，是否需要私有部署，IT 与业务谁拍板？这是从试点到采购的门槛。</div>
+        <div class="kp"><b>④ 交付能否复用</b>：第二个客户上线是否更快；哪些配置已变成产品；人天占比多少？如果不能复用，优先补交付与产品化能力。</div>
+        <div class="kp"><b>⑤ 当前唯一瓶颈是什么</b>：成本、可靠性、集成还是采用？<b>只允许选一个第一优先级</b>，它才是岗位画像和人才地图的起点。</div>
       </div>
 
       <details class="deep-reference">
         <summary>展开行业技术资料库：产业链拆解、落地鸿沟、岗位话术与案例</summary>
         <div class="deep-reference-body">
 
-      <!-- 一、赛道速写 -->
-      <h3>一、赛道速写：2 分钟看懂大模型行业</h3>
-      <p>大模型行业在 2025-2026 的转折点：<b>从"比谁的模型大"转向"比谁用得好"</b>。基座模型赛道基本定型（几家大厂+少数创业公司），但应用层正在爆发——Agent、行业垂直模型、AI Native 应用是当前最热的三个方向。</p>
+      <!-- 一、基础概念 -->
+      <h3>一、基础概念：先分清候选人到底做了哪一层</h3>
+      <p>“做大模型”可能是训练模型、把模型服务好、搭 Agent 平台，或把 AI 嵌进某个业务流程。它们能相互协作，但不能按同一套岗位标准判断。猎头需要从候选人的产出倒推其真实层级，而不是从职位名称猜。</p>
 
       <table>
-        <thead><tr><th>猎头要关注的维度</th><th>当前状态</th><th>对寻访的影响</th></tr></thead>
+        <thead><tr><th>候选人常说的工作</th><th>继续追问</th><th>经验成立的证据</th></tr></thead>
         <tbody>
-          <tr><td>阶段</td><td>从"卷参数"进入"卷应用"——基座投入收窄，Agent 和行业应用招聘激增</td><td>基座岗需求在降，Agent 和推理优化岗在涨——别推错方向</td></tr>
-          <tr><td>钱往哪流</td><td>大厂（字节/腾讯/阿里）重兵投入 Agent 平台；初创公司聚焦垂直场景（医疗/法律/金融）</td><td>大厂 Agent 团队在疯狂扩招——这是今年的主力需求</td></tr>
-          <tr><td>人才争夺格局</td><td>基座研究员被大厂和少数头部初创瓜分完毕；应用层人才从互联网/ SaaS 跨界涌入</td><td>纯基座岗已经饱和——推人往 Agent/应用方向引导</td></tr>
-          <tr><td>技术路线分歧</td><td>闭源 vs 开源、MoE vs Dense、云端 vs 端侧、通用 Agent vs 垂直 Agent</td><td>开源的看不起闭源的，端侧的觉得云端的延迟不行——不互通</td></tr>
+          <tr><td>模型训练 / 后训练</td><td>负责数据、训练、评测还是某个模块？能力改善怎么验证？</td><td>能说清数据取舍、评测集、效果变化和线上代价。</td></tr>
+          <tr><td>推理优化 / Infra</td><td>优化的是延迟、吞吐、成本还是稳定性？发生在什么规模？</td><td>能交代前后指标、约束条件和质量损失。</td></tr>
+          <tr><td>Agent / RAG</td><td>任务成功怎么定义？工具失败、权限不足、幻觉时怎么降级？</td><td>有 Eval、监控、失败分类、重试或人工接管机制。</td></tr>
+          <tr><td>行业应用</td><td>替代了哪一步人工流程？谁使用、谁采购、怎么复购？</td><td>能给出上线、使用、效率或续费的具体结果。</td></tr>
         </tbody>
       </table>
 
-      <div class="callout tip"><span class="tt">💡 猎头怎么一句话讲清楚大模型赛道给候选人</span>"大模型行业现在分两层：底层是造模型的，上层是用模型的。底层已经卷成红海了，但上层——用大模型做 Agent、做行业应用——才刚刚开始。你现在如果还在做基座训练，往上走一步到 Agent 或推理优化，大概率是未来三年最稳的方向。"</div>
+      <div class="callout tip"><span class="tt">猎头怎么开场</span>“不想泛聊模型，我想先理解你负责的那条链：输入是什么、最终替谁完成什么任务、怎么衡量成功、出错怎么处理、上线后数据怎么回来。”这比问“你会不会做 Agent”更能聊出真实能力。</div>
 
       <!-- 二、产业链 -->
       <h3>二、产业链四段拆解：每段的人在哪、怎么挖</h3>
@@ -2557,23 +2515,23 @@
     </section>
     <section class="section" id="skill-fde">
 
-      <h2>FDE 前沿部署工程师 · 猎头实战地图</h2>
-      <p class="subtitle">FDE（Forward Deployed Engineer，前沿部署工程师）是 2025-2026 年科技行业<b>最热门的岗位</b>——a16z 原话「科技行业最热门的岗位」，岗位量一年暴涨 700%+。对猎头：<b>这是当下最值得懂、最好成单的新兴岗位</b>。本章内容提炼自范冰《前线部署工程师》（fde4.ai）公开全书与行业一手资料。</p>
+      <h2>FDE：跨行业落地岗位</h2>
+      <p class="subtitle">FDE（Forward Deployed Engineer，前沿部署工程师）<b>不是第三条赛道</b>，而是一类把产品真正带进客户现场的人。它常见于大模型、企业软件、工业智能和数据平台：客户的难题不在“能不能演示”，而在“能不能接入系统、稳定上线、把现场经验沉淀回产品”。</p>
 
       <div class="keypoints">
-        <div class="kp-title">猎头视角 · FDE 一图</div>
+        <div class="kp-title">猎头视角 · 先搞清 FDE 在解决什么</div>
         <ol>
-          <li><b>一句话定义</b>：驻扎在客户现场、填补「产品能做的」与「客户要的」之间鸿沟的工程师</li>
-          <li><b>为什么火</b>：企业 AI 项目 95% 失败，模型不缺、缺的是把模型塞进客户真实业务的人</li>
-          <li><b>谁在招</b>：Palantir / OpenAI / Anthropic / Sierra / Harvey / Decagon / 火山引擎豆包等（见文末名单）</li>
-          <li><b>薪酬锚点</b>：美国中级 38.5 万美元/资深 61 万/首席 120 万+；国内字节/蚂蚁/智谱 30-100 万人民币年包</li>
+          <li><b>它解决什么</b>：把客户的模糊问题拆成可上线的系统，再把现场反馈变成产品能力。</li>
+          <li><b>什么时候需要</b>：公司有可复用的平台或产品，同时在多个客户现场反复遇到集成、数据、流程和可靠性问题。</li>
+          <li><b>它不是什么</b>：售前讲方案、驻场按人天开发、咨询只给建议，都不等于 FDE。</li>
+          <li><b>猎头要判断什么</b>：这家公司是在卖可复制的产品，还是在把一个“工程师”包装成项目人力。</li>
         </ol>
       </div>
 
-<div class="ops"><div class="ops-title">⚙️ FDE 寻访 · 照着做（接到 FDE 岗位时）</div><p class="ops-sub">FDE 是当下最热的新兴岗位，画像统一、需求爆发。接到这类单子按这张清单走，别用普通工程师的打法。</p><ol><li><b>先验真伪：看薪酬包里有没有销售提成——提成占比高的多半是售前换皮，真 FDE 是工程师薪酬+经营指标浮动奖金</b> <a class="out" href="#tpl-fde">输出 真伪判断</a> <span class="time">⏱ 5 分钟</span></li><li><b>画像对齐：确认要的是「领域叛逆者」还是「原型快手」；警惕客户把「工匠型」「忠诚执行者」当 FDE</b> <a class="out" href="#tpl-fde">输出 画像确认</a> <span class="time">⏱ 10 分钟</span></li><li><b>问平台底座：客户有没有产品平台（Foundry/AIP/模型接口/智能体工具链）——没有平台底座的 FDE 是纯人力外包</b> <span class="out">输出 三问记录</span> <span class="time">⏱ 接单时</span></li><li><b>Mapping 目标池：Palantir 系（人才外溢）/ OpenAI/Anthropic/Cohere/Mistral / Sierra/Harvey/Decagon / 火山引擎豆包等，见目标公司名单</b> <a class="out" href="#tpl-fde">输出 FDE 目标池</a> <span class="time">⏱ 1 小时</span></li><li><b>简历改写法辅导：把候选人的技术成就改写成客户结果语言（「优化 40%」→「客户分析师提前 2 小时拿报表」）</b> <a class="out" href="#tpl-fde">输出 简历改写</a> <span class="time">⏱ 30 分钟</span></li><li><b>面试辅导：重点练「问题拆解」——模糊大问题 60 分钟不写代码，看追问/界定范围/建立秩序；备好一次真实的失败故事</b> <span class="out">输出 面试辅导</span> <span class="time">⏱ 1 小时</span></li></ol></div>
-      <div class="callout tip"><span class="tt">💡 为什么猎头必须懂 FDE</span>① <b>它是 AI 落地（大模型）的核心岗位</b>——大模型章节讲的 Agent/应用岗，很多就是 FDE 的变体；② <b>它横跨你的三个客户群</b>：模型公司（OpenAI 等）、软件公司（Databricks/Salesforce）、甲方企业（招 FDE 自建）；③ <b>画像极清晰</b>——不像普通岗位千人千面，FDE 有全球统一的招聘标准，照着画像推人成功率高。</div>
+<div class="ops"><div class="ops-title">接到 FDE 岗，先判断它是不是一张“产品落地单”</div><p class="ops-sub">不要先按 Title 找人。先看产品、交付方式和组织归属，才能区分真 FDE、售前、交付工程师和驻场外包。</p><ol><li><b>问产品：</b>客户带去现场的可复用平台是什么？同类问题能否做成下一位客户也能用的能力？ <span class="out">输出 产品化判断</span></li><li><b>问交付：</b>这人上线后，对什么结果负责——系统可用、业务指标、客户团队接手，还是只负责项目工时？ <span class="out">输出 交付边界</span></li><li><b>问组织：</b>向产品/工程负责人汇报，还是只向销售线汇报？前者更接近 FDE；后者需警惕售前或项目人力。</li><li><b>再定画像：</b>找能把技术讲成业务结果、能在模糊现场拆问题、也能把现场经验回流产品的人。 <a class="out" href="#tpl-fde">输出 FDE 岗位判断卡</a></li><li><b>Mapping 不按一个行业找：</b>从企业软件、数据平台、云、AI 应用、工业自动化和强交付团队找“做过现场闭环”的人，而不是只搜 FDE Title。</li></ol></div>
+      <div class="callout tip"><span class="tt">FDE 在整本手册里的位置</span><b>具身</b>里，它可能叫机器人部署、现场集成、应用工程；<b>大模型</b>里，它可能叫 AI 解决方案、部署工程、应用工程。名字可以不同，但判断标准一样：有产品底座、对上线结果负责、现场经验能回流产品。满足这三条，才值得按 FDE 逻辑寻访。</div>
 
-      <h3>A. FDE 是什么 · 猎头一句话讲清楚</h3>
+      <h3>FDE 是什么：先分清角色边界</h3>
       <div class="table-wrap">
         <table>
           <thead><tr><th>它是什么</th><th>它不是什么</th></tr></thead>
@@ -2586,7 +2544,7 @@
       </div>
       <div class="callout tip"><span class="tt">🗣️ 给候选人的一句话版本</span>"FDE 简单说就是带着产品去客户现场、把 AI 真正用起来的人。现在模型不缺了，缺的是能把模型塞进客户真实业务、让客户真正用起来的人——所以这个岗位一年涨了七倍，全球都在抢。"</div>
 
-      <h3>B. 为什么 2025-2026 突然爆火 · 猎头要懂的背景</h3>
+      <h3>企业为什么开始需要 FDE</h3>
       <div class="table-wrap">
         <table class="tight">
           <thead><tr><th>事实</th><th>数据</th><th>对猎头的含义</th></tr></thead>
@@ -2600,7 +2558,7 @@
         </table>
       </div>
 
-      <h3>C. FDE 薪酬地图（2026 年市场锚点）· 谈薪弹药</h3>
+      <h3>薪酬怎么判断：先看产品化程度</h3>
       <div class="table-wrap">
         <table class="tight">
           <thead><tr><th>市场 / 公司</th><th>薪酬数据（2026 年初）</th><th>猎头要点</th></tr></thead>
@@ -2614,7 +2572,7 @@
       </div>
       <div class="callout warn"><span class="tt">⚠️ 判断真伪 FDE 的试金石</span><b>看薪酬包里有没有销售提成</b>——提成占比高的，多半是售前换个时髦头衔。真 FDE 是「工程师薪酬 + 与客户经营指标挂钩的浮动奖金」（介于工程奖金与销售佣金之间），a16z 建议激励与客户经理对齐、但别背硬性销售指标。</div>
 
-      <h3>D. FDE 候选人画像 · 照着筛</h3>
+      <h3>候选人画像：能解决现场问题的人</h3>
       <div class="pillar">
         <span class="p-tag">🎯 招「好奇的推土机」，不招「精致的工匠」</span>
         <h4>要的两种人（麦格鲁）</h4>
@@ -2638,7 +2596,7 @@
       </div>
       <div class="callout tip"><span class="tt">💡 面试核心环节「问题拆解」</span>OpenAI / Palantir 的 FDE 面试标志性环节：抛一个巨大而模糊的真实企业问题，六十分钟不写一行代码，只看候选人怎么追问、怎么界定范围、怎么在混乱里建立秩序。考察的不是答案，是过程。给候选人辅导时重点练这个——<b>先理解问题再跳进去，慢就是顺，顺就是快</b>。</div>
 
-      <h3>E. FDE 简历改写法 · 候选人辅导弹药</h3>
+      <h3>候选人辅导：把技术成果说成客户结果</h3>
       <div class="table-wrap">
         <table>
           <thead><tr><th>工程师语言</th><th>FDE 语言（客户结果导向）</th></tr></thead>
@@ -2651,14 +2609,14 @@
       </div>
       <p class="note">简历里的每个技术成就，都要走完"到客户语言的最后一公里"。同时备好两类故事：一次在需求不清时建立秩序的经历 + 一次诚实的失败（Palantir 系面试官对"真实的失败"有执念——这工作本质是在不确定中前进）。</p>
 
-      <h3>F. 判断一家公司是不是"真 FDE" · 三问（帮候选人避坑）</h3>
+      <h3>公司判断：这是不是一张真 FDE 单</h3>
       <ol class="steps">
         <li><h4>你们的平台底座是什么？</h4><p>没有平台底座的 FDE = 纯人力外包。Palantir 的 Foundry/AIP、OpenAI 的模型接口与智能体工具链、Sierra 的智能体平台——FDE 是"带着平台去现场"，否则退化为定制开发。</p></li>
         <li><h4>现场学习怎么回流产品？</h4><p>请对方讲一个最近从现场沉淀为产品功能的实例。讲不出来就有问题——三个客户撞上同一个集成缺口，那是产品情报，不是三桩麻烦。</p></li>
         <li><h4>FDE 向谁汇报？</h4><p>向产品或工程线汇报 → 模式被认真对待；向销售线汇报 → 小心沦为售前的人力池。</p></li>
       </ol>
 
-      <h3>G. 谁在招 FDE · 目标公司名单（Mapping 直接用）</h3>
+      <h3>人才地图：去哪里找这类人</h3>
       <div class="table-wrap">
         <table class="tight">
           <thead><tr><th>梯队</th><th>公司 / 团队</th><th>猎头备注</th></tr></thead>
@@ -2699,7 +2657,7 @@
         </ol>
       </div>
 
-<div class="ops"><div class="ops-title">⚙️ 寻访策略 · 照着做（每天怎么推进）</div><p class="ops-sub">三导向定地图，双线落地定节奏。这张清单是「每天开工」的固定动作。</p><ol><li><b>早上 15 分钟：更新 Search Brief（四问 + 隐性需求 + 决策链），确认没有需求变更</b> <a class="out" href="#tpl-brief">输出 Brief 最新版</a> <span class="time">⏱ 15 分钟</span></li><li><b>按客户导向定优先级：高优先岗重兵投入、低优先岗长线铺垫</b> <span class="out">输出 岗位优先级表</span> <span class="time">⏱ 5 分钟</span></li><li><b>按候选人导向画 Longlist：A 立即可推 / B 培养 / C 储备 / D 转介绍源，分 ABCD</b> <a class="out" href="#tpl-longlist">输出 Longlist 分层</a> <span class="time">⏱ 30 分钟</span></li><li><b>按行业导向补地图：产业链四把刀切分 → 目标公司清单 → 人才密度 → 迁移性</b> <span class="out">输出 产业链地图</span> <span class="time">⏱ 每周更新</span></li><li><b>触达组合拳：高端岗领英+脉脉+转介绍，中端岗猎聘+BOSS；能见面绝不电话</b> <a class="out" href="#tpl-track">输出 触达记录</a></li><li><b>每条记录必须有「下一步动作 + 日期」，下班前 10 分钟写明日三件事</b> <a class="out" href="#tpl-track">输出 CRM 字段完整</a> <span class="time">⏱ 10 分钟</span></li></ol></div>
+<div class="ops"><div class="ops-title">先校准市场，再扩大寻访</div><p class="ops-sub">前 10 个有效样本不是为了凑推荐，是为了回答：这种人在哪里、愿不愿意动、客户条件够不够。</p><ol><li><b>先建 30–50 人 Longlist：</b>按目标公司、相邻公司、可迁移路径三层列人；每个人只记录岗位、直接成果、可能的动机和联系路径。 <a class="out" href="#tpl-longlist">输出 首版人才地图</a></li><li><b>先聊最有代表性的 5 个人：</b>一线标杆、相邻赛道、薪酬高位、稳定型、近期有变动信号的人各至少一位。不要只找“看起来最像 JD”的人。</li><li><b>每通电话只验证一个市场事实：</b>薪酬是否够、地点是否能接受、能力能否迁移、客户品牌是否有吸引力、离职意愿有没有。 <span class="out">输出 市场事实表</span></li><li><b>第 10 个样本后给客户一次校准：</b>“市场上能做的人主要在 A/B 两类公司；你们的薪酬落在第几档；最常被拒绝的原因是什么；要得到人，需要放宽哪一条。” <a class="out" href="#tpl-brief">输出 Search Brief v2</a></li><li><b>校准后再分层推进：</b>A 类高匹配且可动，约深聊；B 类高匹配但暂不动，养关系；C 类能力可迁移，作为备选；D 类不适合本人但可能转介绍。所有人都要有下一步和日期。</li></ol></div>
       
 
       <div class="callout tip"><span class="tt">💡 一句话心法</span>好寻访 = <b>客户真实需求</b> × <b>候选人分布地图</b> × <b>行业人才结构</b>。三者任一缺失，都会退化成"广撒网碰运气"——看起来很忙，产出极低。</div>
@@ -3305,7 +3263,7 @@
         </ol>
       </div>
 
-<div class="ops"><div class="ops-title">⚙️ 挂电话后 10 分钟：必须做完的判断</div><p class="ops-sub">别只把信息录进系统。你要决定下一步是“马上推”“继续养”“先放下”。</p><ol><li><b>先写一句真实动机：他为什么现在会看，而不是泛泛写“想看机会”</b> <span class="out">输出 真实原因</span> <span class="time">⏱ 2 分钟</span></li><li><b>判断状态：主动的人拼速度；观望的人给一个具体钩子；被动的人只养关系</b> <span class="out">输出 状态标签</span> <span class="time">⏱ 2 分钟</span></li><li><b>对照岗位：哪两条最匹配，哪一条是硬伤；硬伤过不去就别浪费双方时间</b> <span class="out">输出 匹配结论</span> <span class="time">⏱ 3 分钟</span></li><li><b>提前写风险：竞业 / 家庭 / 年终 / 现东家挽留 / 其他 Offer，谁最可能让他停下来</b> <span class="out">输出 风险点</span> <span class="time">⏱ 2 分钟</span></li><li><b>最后只给一个结论：马上推 / 约深聊 / 养着 / 暂不推，并写下一次联系日期</b> <span class="out">输出 下一步</span> <span class="time">⏱ 1 分钟</span></li></ol></div>
+<div class="ops"><div class="ops-title">挂电话后，只做一个判断：值不值得把他推到客户面前</div><p class="ops-sub">电话记录不是聊天纪要。推荐前必须把候选人拆成四件事：能不能做、想不想来、能不能入职、会不会出事。</p><div class="table-wrap"><table><thead><tr><th>四维</th><th>要拿到的事实</th><th>没有拿到时怎么做</th></tr></thead><tbody><tr><td>能不能做</td><td>亲自负责过什么、结果如何、在什么资源条件下完成</td><td>约深聊，用一个真实项目追问到底</td></tr><tr><td>想不想来</td><td>当前不满是什么、新机会真正吸引什么、排序第一的是钱/成长/老板/地点哪一个</td><td>不要推荐，先保持关系</td></tr><tr><td>能不能入职</td><td>到岗时间、薪酬底线、家庭/地点、竞业、其他流程</td><td>先把障碍摊开，再安排面试</td></tr><tr><td>会不会出事</td><td>履历一致性、离职原因、稳定性、现公司挽留概率、背调风险</td><td>要求证明，或明确标为风险人选</td></tr></tbody></table></div><ol><li><b>写一句真实动机：</b>不要写“看机会”。要写“直属老板换人后职责被收缩”“两地分居希望回杭州”“想从交付岗转到产品型团队”这类可验证原因。</li><li><b>给出明确结论：</b>可推荐 / 需补一轮信息 / 长期维护 / 不再推进。推荐不是“简历匹配”，而是四维没有明显短板。</li><li><b>每个风险都要有处理动作：</b>竞业找法务确认；薪酬差距找客户确认带宽；挽留风险提前设计比较表；背调疑点在面试前说清。 <span class="out">输出 候选人四维评估</span></li></ol></div>
       <div class="callout tip">
         <span class="tt">🧭 分析三维模型</span>
         任何一个人选，落笔前都要过三关：<b>① 能力匹配度</b>（能不能干）、<b>② 意愿动机度</b>（想不想动）、<b>③ 风险稳定度</b>（动得成不成 / 稳不稳）。只盯能力、不问动机，是最常见的新手翻车——推了一个"履历完美但根本不想动"的人。
@@ -3576,7 +3534,7 @@
 <h2>First Call 表单 · A-F 结构化模板</h2>
       <p class="subtitle">这是一份"打完电话回头检查"的结构化表单，不是"照着念的脚本"。<b>怎么自然聊，看「打 Call / F2F」章节。</b>这份表单帮你在聊完之后不漏关键信息。</p>
 
-<div class="ops"><div class="ops-title">⚙️ First Call · 照着做（打完逐项检查）</div><p class="ops-sub">前两周边打边扫 A-F 表单，两周后当复盘清单用。</p><ol><li><b>开场判断对方状态：防御 / 开放 / 赶时间，用对应策略</b> <span class="out">输出 状态判断</span> <span class="time">⏱ 开场 10 秒</span></li><li><b>按 A-F 六段走：开场 → 现状 → 动机 → 机会 → 收信息 → 收尾</b> <a class="out" href="#tpl-firstcall">输出 A-F 六段全走</a> <span class="time">⏱ 15-20 分钟</span></li><li><b>CS / ES / NP / 其他在聊机会四个数字必须拿到</b> <a class="out" href="#tpl-firstcall">输出 四个数字</a></li><li><b>遇到不会答的问题用「确认后同步」两套回应，不瞎编</b> <span class="out">输出 诚实回应</span></li><li><b>收尾必做三件事：加微信 + 约下一步 + 问一个转介绍名字</b> <span class="out">输出 三件事完成</span> <span class="time">⏱ 1 分钟</span></li><li><b>打完用 Checklist 逐项检查，漏了立刻补记</b> <a class="out" href="#tpl-firstcall">输出 Checklist 复查</a> <span class="time">⏱ 2 分钟</span></li></ol></div>
+<div class="ops"><div class="ops-title">电话前准备：这通电话要拿到什么，先写下来</div><p class="ops-sub">第一次电话的目标不是把岗位讲完，而是判断能否进入下一步。准备充分，才能不把候选人聊成一次性资源。</p><ol><li><b>看三类信息：</b>他的职责和成果、近两次变动原因、最近可能发生的变化（汇报线、产品、团队、地点）。先写下你最想验证的两个假设。</li><li><b>按状态设置目标：</b>主动看机会的人，拿到完整情况并快速推进；观望的人，确认真正顾虑；被动的核心人才，只争取下一次深聊；明显防御的人，先建立信任，不硬聊职位。</li><li><b>准备一句不夸张的开场：</b>“我不是想用一份 JD 打扰你。这个团队现在在解决 ___，我看你在 ___ 的经验可能相关，想先听听你现在更在意什么。”</li><li><b>底线信息要问清：</b>当前总包、期望区间、到岗时间、地点、竞业和正在进行的机会；但不要在开场三分钟像填表一样追问。</li><li><b>结束前只约一个下一步：</b>补材料、约深聊、发一页机会信息，或约下次联系时间。没有下一步的“加微信”不算有效沟通。 <a class="out" href="#tpl-firstcall">输出 首通电话记录</a></li></ol></div>
       <div class="callout tip"><span class="tt">🧭 使用方式</span>新人前两周可以边打边扫一眼这份表单，确保 A→F 每个阶段该问的都问了。两周后，这些东西会变成本能——那时候你只需要这份表单当"打完复盘"的检查清单。</div>
 
       <h3>A-F 六段速查</h3>
@@ -3651,7 +3609,7 @@
         </ol>
       </div>
 
-<div class="ops"><div class="ops-title">⚙️ 打 Call / F2F · 照着做（每通电话的框架）</div><p class="ops-sub">先判类型再开场，过程中听反应动态调整，收尾按四种情况对应。</p><ol><li><b>拿起电话前 10 秒判类型：主动 / 观望 / 被动 / 防御 / 情绪</b> <span class="out">输出 类型判断</span> <span class="time">⏱ 10 秒</span></li><li><b>开场按触达方式切换：冷 Call 求不挂、温 Call 求推进、搜到的求破冰</b> <span class="out">输出 对应开场</span> <span class="time">⏱ 30 秒</span></li><li><b>五个高频回应（你是谁 / 不看机会 / 哪家公司 / 在忙 / 好啊）用对应策略接</b> <span class="out">输出 应对策略</span> <span class="time">⏱ 全程</span></li><li><b>收尾按状态选四种收法之一，重点是留下入口（微信）</b> <span class="out">输出 收尾完成</span> <span class="time">⏱ 1 分钟</span></li><li><b>F2F 五段：寒暄 3-5 分钟 → 介绍 2 分钟 → 听他说 20-30 分钟 → 聊机会 10 分钟 → 收尾要转介绍</b> <span class="out">输出 F2F 五段</span> <span class="time">⏱ 60 分钟</span></li><li><b>打完记 CRM：状态 + 下一步 + 一个「今天我问漏了什么」</b> <a class="out" href="#tpl-track">输出 CRM 记录</a> <span class="time">⏱ 2 分钟</span></li></ol></div>
+<div class="ops"><div class="ops-title">电话里怎么把话聊透：先听事实，再讲机会</div><p class="ops-sub">候选人不是同一种状态。先判断他在防什么、想要什么，再决定这通电话是深聊、留钩子还是收回来。</p><div class="table-wrap"><table><thead><tr><th>候选人状态</th><th>这通电话的目标</th><th>说人话的开法</th></tr></thead><tbody><tr><td>主动看机会</td><td>确认匹配、节奏和底线</td><td>“你现在最想换掉的是什么？我先判断这份机会是不是解得了。”</td></tr><tr><td>观望</td><td>找出真正的顾虑</td><td>“你不是一定要走，那你愿意花时间听新机会，通常是哪里开始不对劲了？”</td></tr><tr><td>被动但稀缺</td><td>建立信任，约下一次</td><td>“不急着聊跳槽。我想先认识你，之后有真正对你有用的事再联系。”</td></tr><tr><td>防御或被频繁骚扰</td><td>降低防备，不硬推</td><td>“理解你不想被泛岗位打扰。我只确认一件事：你未来一年更想把能力做深，还是把管理范围做大？”</td></tr></tbody></table></div><ol><li><b>深聊时只追项目，不追形容词：</b>“你亲自做了哪部分？”“当时最难的约束是什么？”“结果怎么证明？”这样才能验证能力，而不是听“负责过、参与过”。</li><li><b>介绍机会只讲与他相关的部分：</b>业务卡点、直属老板、第一阶段任务、真实难处和回报。不要把客户宣传稿念一遍。</li><li><b>收尾时说清下一步和责任人：</b>“我今晚发你岗位的一页说明；你明天看完告诉我两个疑问；如果方向一致，我们周三做 40 分钟深聊。” <a class="out" href="#tpl-track">输出 沟通记录与下一步</a></li></ol></div>
       <!-- ============ 一、候选人分类 ============ -->
       <h3>打前先判断：他现在是什么状态</h3>
       <p style="color:var(--c-ink-3);font-size:14px;">拿起电话前花 10 秒判断对方类型。类型决定了你的语气、策略、以及你期望从这通电话得到什么。</p>
@@ -3904,7 +3862,7 @@
         </ol>
       </div>
 
-<div class="ops"><div class="ops-title">⚙️ 推荐 · 照着做（发出去之前）</div><p class="ops-sub">推荐是质量关口：查重 → 推荐语 → 简历检查，三步全过才能发。</p><ol><li><b>先查重（北森 / 摩卡 / 飞书系统）：有重复先确认谁先推的、客户是否在走流程</b> <span class="out">输出 查重通过</span> <span class="time">⏱ 2 分钟</span></li><li><b>编辑推荐语：姓名 / 岗位 / 目前薪酬 / 期望 / 看机会原因 / 四条推荐理由</b> <a class="out" href="#tpl-recommend">输出 推荐语完成</a> <span class="time">⏱ 10 分钟</span></li><li><b>简历检查：学历（专升本 / 硕士本科 / 月份）/ Gap / 公司岗位表述 / 薪酬信息 / 版本一致</b> <a class="out" href="#tpl-resume">输出 简历检查单</a> <span class="time">⏱ 5 分钟</span></li><li><b>Candidate Report 发给候选人确认（删掉薪酬和推荐理由）</b> <span class="out">输出 候选人确认</span></li><li><b>同步告知背调风险：造假撤销 Offer + 列入黑名单</b> <span class="out">输出 风险告知</span></li><li><b>微信群发简历/报告 + 推荐语，@对接人；上传系统</b> <span class="out">输出 已发送</span></li></ol></div>
+<div class="ops"><div class="ops-title">推荐不是转发简历，是替双方做第一轮判断</div><p class="ops-sub">客户愿意约面，不是因为简历写得长，而是因为你把“为什么是他、风险是什么、该验证什么”说清了。</p><ol><li><b>推荐前先过四道关：</b>没有查重不推；候选人未确认不推；四维判断不完整不推；关键风险没有预案不推。</li><li><b>推荐报告只回答五个问题：</b>他现在负责什么？最能证明胜任的一段经历是什么？为什么此刻愿意看？与岗位最匹配的两点是什么？客户面试必须验证的风险是什么？ <a class="out" href="#tpl-recommend">输出 推荐决策报告</a></li><li><b>不要替候选人遮风险：</b>例如“跨行业，但做过同一类渠道搭建”“薪酬有差距，已确认可用职级/长期激励补足”。风险说在前面，客户才信你的判断。</li><li><b>推荐后 48 小时拿到结论：</b>约面、补信息或不看。客户沉默时不要只催“看了吗”，直接问：“哪一项让你犹豫？我补证据还是重新校准范围？”</li><li><b>被拒也要编码：</b>能力不够、场景不对、薪酬不对、风格不对还是客户标准变了。连续三个相同原因，就必须回到岗位画像，而不是继续换人。 <span class="out">输出 拒绝原因记录</span></li></ol></div>
       <div class="callout warn"><span class="tt">⚠️ 查重必须先做</span>推荐简历之前先查重（北森、摩卡、飞书等客户系统），<b>如果没有重复，才进行推荐动作</b>。如果有重复——确认是不是同一个人、谁先推的、客户是不是在走流程，再决定要不要推。</div>
 
       <h3>推荐前：三件事没做完就别发</h3>
@@ -3965,7 +3923,7 @@
         </ol>
       </div>
 
-<div class="ops"><div class="ops-title">⚙️ 面试管理 · 照着做（一轮面试的完整动作）</div><p class="ops-sub">两条线：候选人侧做教练，客户侧做流程管家，靠信息对称咬合。</p><ol><li><b>面试前 1 天辅导：岗位诉求 / 面试官风格 / 轮次 / 雷区 / 反向了解他最怕被问什么</b> <span class="out">输出 辅导完成</span> <span class="time">⏱ 30 分钟</span></li><li><b>面试安排 6 步：问时间 → 确认企业 → 再确认候选人 → 发邀请 → 确认收到+约辅导 → 提前 1h 提醒</b> <span class="out">输出 排期闭环</span></li><li><b>给面试官发 briefing：亮点摘要 + 想验证的点 + 避免踩的雷</b> <span class="out">输出 面试官briefing</span> <span class="time">⏱ 10 分钟</span></li><li><b>面试后 2h 内收候选人反馈，24h 内追客户反馈，用模板记录</b> <a class="out" href="#tpl-interview">输出 双端反馈</a></li><li><b>客户说「再看看」→ 用对比表把待定逼成要/不要</b> <a class="out" href="#tpl-offer">输出 对比表</a></li><li><b>面试后给候选人跟进电话，别让任何人石沉大海</b> <span class="out">输出 跟进电话</span> <span class="time">⏱ 15 分钟</span></li></ol></div>
+<div class="ops"><div class="ops-title">每一轮面试只验证一件关键事</div><p class="ops-sub">面试轮次越多不等于判断越准。猎头的作用是让客户和候选人每轮都知道：这轮要消除什么疑虑，下一轮是否还有必要。</p><ol><li><b>面试前，给双方一页说明：</b>本轮面试官是谁、他最在意什么、候选人该用哪个项目证明自己、候选人可以反问什么。不要教背答案，要帮助讲清真实经历。</li><li><b>按轮次设问题：</b>业务面验证能不能做；直属老板面验证合作方式和优先级；高管面验证方向与长期承诺；HR 面确认薪酬、流程和风险。每轮不要重复问一遍“自我介绍”。</li><li><b>面后先收候选人，再收客户：</b>候选人 2 小时内问“最有把握和最担心的各是什么”；客户 24 小时内问“想继续还是不继续，依据是什么”。 <a class="out" href="#tpl-interview">输出 双边反馈与下一轮目标</a></li><li><b>客户说“再看看”时，逼出事实：</b>“是能力证据不足、团队风格担心，还是有更强人选？如果补一项信息，什么会让你推进？”没有具体答案，就把这轮视为暂停信号。</li><li><b>候选人犹豫时，不急着催：</b>先问他犹豫的是工作内容、老板、钱、地点还是风险。不同原因由不同的人解决：业务问题找用人经理，带宽问题找 HR，生活问题和候选人一起做安排。</li></ol></div>
       <h3>面前：候选人要知道什么、准备什么</h3>
       <div class="line cand">
         <div class="line-h"><span class="tag">🟢 交付</span> 候选人侧 · 让他把实力最大化</div>
@@ -4107,7 +4065,7 @@
         </ol>
       </div>
 
-<div class="ops"><div class="ops-title">⚙️ Offer 谈判 · 照着做（从收集到签约）</div><p class="ops-sub">看年包不看月薪；先摸清双方底牌再上桌；Offer 没到手绝不让候选人提离职。</p><ol><li><b>收集 Offer 信息：年薪 = 月薪×12/13 + 年终 + 绩效；公积金计入；个税截图 &gt; 银行流水 &gt; OA 截图</b> <span class="out">输出 Offer 信息表</span></li><li><b>谈判前摸清：候选人真实底线 / 其他 Offer / 家庭因素；客户预算线 / 职级带宽</b> <span class="out">输出 双方底牌</span></li><li><b>人选报数 &gt;20% 涨幅 → 压制预期；多年未跳 / 简历极优可破 30%</b> <span class="out">输出 预期对齐</span></li><li><b>帮候选人算三本账：年包 / 成长 / 风险，做 Offer 对比表（不只比数字）</b> <a class="out" href="#tpl-offer">输出 对比表</a></li><li><b>跟客户谈带数据：市场价值 + 其他 Offer 数字，别空口要价</b> <span class="out">输出 谈判弹药</span></li><li><b>口头 → 书面：催正式 offer letter；设签字 deadline；没到手前禁止提离职</b> <span class="out">输出 书面 Offer</span></li></ol></div>
+<div class="ops"><div class="ops-title">Offer 不是报价，是最后一次把风险摊开</div><p class="ops-sub">候选人签字的概率，取决于他对新机会的期待是否大于放弃现状的成本。只谈月薪，最容易在离职期反悔。</p><ol><li><b>Offer 前做一次接受率盘点：</b>工作内容、直属老板、现金总包、长期激励、地点与家庭、现公司挽留、其他 Offer，逐项标绿/黄/红。出现两个红项，不要急着让客户发 Offer。</li><li><b>先分别确认底线，再让双方谈：</b>候选人要的不是“期望薪资”，而是能接受的组合与不能退的点；客户要的是带宽、职级和可以交换的非现金条件。 <a class="out" href="#tpl-offer">输出 Offer 决策表</a></li><li><b>用三本账帮候选人做选择：</b>第一年确定收入、两三年成长收益、离开现状的真实风险。把不确定的期权、奖金写成条件，不许当成已到账的钱。</li><li><b>谈判只传递事实，不替任何一方放话：</b>“他最看重的是 ___，如果现金不动，职级/签字费/长期激励哪一项有空间？”比“他觉得太低了”更能推进。</li><li><b>书面 Offer 到手前不建议提离职；签字后仍要每周跟进：</b>确认背调、离职、交接、入职安排和反悔信号。 <span class="out">输出 接受率与离职风险记录</span></li></ol></div>
       <h3>先把账算清：候选人真正看重什么</h3>
       <ul>
         <li>薪资各项按模板填入，<b>数字要准确</b>，有疑问点和人选确认，别写错别字。</li>
@@ -4260,7 +4218,7 @@
         </ol>
       </div>
 
-<div class="ops"><div class="ops-title">⚙️ 入职跟进 · 照着做（接 Offer → 入职当天）</div><p class="ops-sub">接受 Offer ≠ 下定决心。入职前每周至少 1 次联系，把风险全部暴露并解决。</p><ol><li><b>离职交接期：每周跟进，现东家挽留 → 帮他回忆当初为什么走；被画饼 → 区分承诺 vs 已发生</b> <span class="out">输出 心态记录</span> <span class="time">⏱ 每周</span></li><li><b>入职前确认三件事：Last Day 日期 / 心态有无变化 / 异地租房行程</b> <span class="out">输出 入职前清单</span></li><li><b>背景调查：提前准备证明人、对齐说法；bgc 卡住有预案</b> <span class="out">输出 背调就绪</span></li><li><b>入职当天 9:30 确认到公司；系统同步入职信息</b> <span class="out">输出 到岗确认</span></li><li><b>入职当天下班后跟进：团队感受 / 当天工作 / 对同事评价，发现问题及时沟通 HR</b> <span class="out">输出 首日反馈</span></li><li><b>首周跟进：顺不顺 / 老板有没有兑现 / 设备工位 mentor 到位没</b> <span class="out">输出 首周反馈</span></li></ol></div>
+<div class="ops"><div class="ops-title">签字以后，才进入真正的交付期</div><p class="ops-sub">接受 Offer 不是入职；入职不是留下。猎头要持续管理候选人的反悔风险，也要帮客户兑现承诺。</p><ol><li><b>签字后 24 小时：</b>确认离职时间、背调材料、入职日期和最可能反悔的事。候选人说“没问题”不够，要写成具体时间表。</li><li><b>离职期每周一次：</b>问交接是否顺、现公司有没有新条件、家人是否支持、入职准备有没有障碍。被挽留时，不劝他“别走”，而是重看当初离开的原因是否真的被解决。</li><li><b>入职前 3 天：</b>把联系人、报到时间、设备/工位、城市住宿、第一周安排再确认一遍。最小问题提前消除，能显著减少临时失联。</li><li><b>到岗后按 Day 1 / Week 1 / Day 30 跟进：</b>新人是否知道目标、直属老板是否兑现承诺、团队是否愿意接纳、实际职责与面试所说是否一致。 <span class="out">输出 入职风险记录</span></li><li><b>发现失配先判断性质：</b>沟通误会可撮合；职责变化需客户重新确认；价值观和组织问题则尽早止损并启动保证期预案。</li></ol></div>
       <h3>候选人侧：离职到入职，哪些风险最容易翻车</h3>
       <div class="line cand">
         <div class="line-h"><span class="tag">🟢 交付</span> 候选人侧 · 别让他跑在入职前</div>
@@ -4934,7 +4892,7 @@
           <h3>第1周 · 基础认知</h3>
           <ul>
             <li>理解行业、公司、赛道</li>
-            <li>通读 8 步做单流程</li>
+            <li>通读六道决策关，理解每一关要解决什么问题</li>
             <li>账号开通 + 工具熟悉</li>
             <li>观摩真实业务电话</li>
             <li>考核：能复述流程、建 Longlist</li>
@@ -4974,7 +4932,7 @@
             <span class="chip info">目标公司清单</span>
             <span class="chip info">Longlist 雏形</span>
           </div>
-          <div class="goal">考核：能复述 8 步流程 + 建出第一版 Longlist</div>
+          <div class="goal">考核：能说清六道决策关 + 建出第一版 Longlist</div>
         </div>
         <div class="tn">
           <span class="tw">第 2-4 周</span>
@@ -5024,7 +4982,7 @@
         <div class="kp-title">本章干货</div>
         <ol>
           <li>本周<b>不做单</b>——先建立行业认知与流程认知，别急着打 Call</li>
-          <li>必须搞懂：赛道产业链、公司在赛道里的位置、做单 8 步分别在干什么</li>
+          <li>必须搞懂：赛道产业链、公司在赛道里的位置、六道决策关分别在解决什么问题</li>
           <li>输出物：行业笔记 + 至少 20 家目标公司清单</li>
         </ol>
       </div>
@@ -5081,7 +5039,7 @@
           <thead><tr><th>考核项</th><th>标准</th><th>结果</th></tr></thead>
           <tbody>
             <tr><td>行业认知</td><td>能说出 3 个核心赛道的头部公司</td><td> </td></tr>
-            <tr><td>流程认知</td><td>能复述猎头做单 8 个阶段</td><td> </td></tr>
+            <tr><td>流程认知</td><td>能说清六道决策关及每关的交付物</td><td> </td></tr>
             <tr><td>搜索能力</td><td>能独立在猎聘上构建 Longlist</td><td> </td></tr>
             <tr><td>模板使用</td><td>能填写推荐报告和客户简报</td><td> </td></tr>
             <tr><td>沟通能力</td><td>模拟 BD 和候选人沟通的基本话术过关</td><td> </td></tr>
@@ -5939,6 +5897,6 @@
       <div class="callout tip"><span class="tt">速查中心的底层规则</span>所有问题先分三类：<b>信息没拿到</b>（补事实）、<b>预期没对齐</b>（拉双方说清）、<b>优先级变了</b>（确认后止损或升级）。先分对类，话术才不会变成“追着问”。</div>
     </section>
 </main>
-<script src="assets/app.js" charset="UTF-8"></script>
+<script src="assets/app.js?v=20260827-4" charset="UTF-8"></script>
 </body>
 </html>
