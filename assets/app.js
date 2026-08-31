@@ -37,14 +37,15 @@
 
   const readingOrder = [
     "home", "sop-flow",
-    "path", "mentor", "culture", "essence",
+    "culture", "essence", "mentor", "path",
     "client-analysis", "skill-deconstruct", "skill-industry",
-    "sop-search", "exec-mapping", "sop-channel", "rel-refer", "resume",
-    "skill-firstcall", "sop-call", "skill-candidate",
+    "sop-search", "exec-mapping", "sop-channel", "rel-refer",
+    "resume", "skill-firstcall", "sop-call", "skill-candidate",
     "sop-recommend", "sop-interview", "sop-offer", "sop-onboard",
-    "sop-payment", "sop-guarantee", "skill-bd", "client-dev",
+    "sop-payment", "sop-guarantee", "risk",
     "skill-embodied", "skill-llm", "skill-fde",
-    "faq-center", "deliverables", "tools", "risk",
+    "skill-bd", "client-dev",
+    "faq-center", "deliverables", "tools",
     "cases-win", "cases-fail", "cases-review"
   ];
   if (main) {
