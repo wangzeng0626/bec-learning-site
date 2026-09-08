@@ -37,14 +37,14 @@
 
   const readingOrder = [
     "home", "sop-flow",
-    "culture", "essence", "mentor", "path",
-    "client-analysis", "skill-deconstruct", "skill-industry",
-    "sop-search", "exec-mapping", "sop-channel", "rel-refer",
+    "client-analysis", "skill-deconstruct",
+    "sop-search", "skill-industry", "exec-mapping", "sop-channel",
     "resume", "skill-firstcall", "sop-call", "skill-candidate",
     "sop-recommend", "sop-interview", "sop-offer", "sop-onboard",
     "sop-payment", "sop-guarantee", "risk",
     "skill-embodied", "skill-llm", "skill-fde",
-    "skill-bd", "client-dev",
+    "rel-refer", "skill-bd", "client-dev",
+    "culture", "essence", "mentor", "path",
     "faq-center", "deliverables", "tools",
     "cases-win", "cases-fail", "cases-review"
   ];
@@ -55,6 +55,225 @@
     });
   }
 
+  /* ---------- 寻访 / 简历 / 电话：按判断时点重写 ---------- */
+  const focusedSections = {
+    essence: `
+      <h2>职业能力：用真实工作检验进步</h2>
+      <p class="subtitle">工作价值见做单总览，本章不再重复。新人要练的是：面对不完整的信息，能做出有依据的下一步，并把承诺兑现。</p>
+      <h3>先看工作质量，不用成单速度给新人定性</h3>
+      <p>成单还受客户决策、岗位难度、市场供给和候选人选择影响。没有成单不自动等于没进步；电话打得多也不自动等于做得好。带教要看动作是否正确，项目复盘再看这些动作是否带来有效推进。</p>
+      <h3>八项能力，都用一件实际工作来练</h3>
+      <div class="table-wrap"><table><thead><tr><th>能力</th><th>怎么练</th><th>怎样看进步</th></tr></thead><tbody>
+      <tr><td>提问</td><td>选一个与岗位有关的项目，区分任务、个人动作和结果；一次追问一个关键点。</td><td>原先模糊的信息变清楚了，而不是机械追问三遍“为什么”。</td></tr>
+      <tr><td>倾听</td><td>用自己的话复述候选人最重要的考虑，请本人纠正。</td><td>下一步围绕对方确认的考虑安排，不靠猜心理、问隐私证明聊得深。</td></tr>
+      <tr><td>岗位理解</td><td>把一项岗位要求翻成来源和验证问题，让负责人检查。</td><td>能解释为什么找这类人，也能指出看似相关但不适合的履历。</td></tr>
+      <tr><td>判断</td><td>选一位人选，分别写事实、你的推断、未知项和推进建议。</td><td>知道哪些缺口阻止推荐，哪些可以留给客户面试。</td></tr>
+      <tr><td>诚信与边界</td><td>不知道的条件标待确认，约一个实际可兑现的回复时间。</td><td>不虚报薪酬、不编造经历、不越过推荐授权。评价的是行为，不是敢不敢公开私人信息。</td></tr>
+      <tr><td>沟通与协作</td><td>向同事汇报一个卡点：目前结论、支持事实、希望对方帮什么。</td><td>同事能直接接手动作，不需要从全部聊天记录重新猜。</td></tr>
+      <tr><td>承受拒绝与调整</td><td>复盘一次拒绝，区分匹配问题、时机问题和自己可以改的动作。</td><td>能恢复工作并调整方法；不设“被拒次数”或固定恢复分钟数证明抗压。</td></tr>
+      <tr><td>长期关系</td><td>按对方许可和关注方向提供相关信息，有变化再联系。</td><td>资料更新、承诺兑现、边界被尊重；不以收集家庭信息和强行刷存在感经营关系。</td></tr>
+      </tbody></table></div>
+      <h3>每次复盘只改一个最影响推进的动作</h3>
+      <div class="phrase"><div class="ph-scene">电话聊了很久，还是写不出推荐理由</div><div class="ph-say">“这通电话不是聊得不够长，而是项目经历里没有分清他本人负责哪一段。下次遇到团队成果，我先追问个人职责。我们再看下一份记录有没有把这件事写清。”</div><div class="ph-why">拿前后两份记录比较，比“你要更专业、更有销售感”有用。使用录音带教须先满足公司的告知、授权和保密要求；没有可用录音，就用脱敏记录复盘。</div></div>
+      <h3>允许查资料和求助，但要知道自己缺什么</h3>
+      <p>不懂技术名词，可以查岗位库或请同事解释；不清楚客户能否改条件，找项目负责人；涉及法律条款或正式承诺，交给有权限的负责人及专业人员。独立做单不是所有事自己拍板，而是知道自己能判断到哪一步。</p>`,
+    mentor: `
+      <h2>导师带教：让新人做，关键处把关</h2>
+      <p class="subtitle">按新人第一周就参与真实业务的方式带教。时间阶段只是参考，参与程度看实际能力，不把新人留在读手册和做空表的阶段。</p>
+      <h3>开始接手时，给一张可以执行的职位单</h3>
+      <p>导师交代客户和岗位已确认的信息、关键任务、可搜索来源、禁止接触范围及本次任务。新人先复述，再找人和联系。开场不熟可先演练一次；不是等整套理论学完才拨号。</p>
+      <h3>自己做的动作与必须找人的事情分开</h3>
+      <div class="table-wrap"><table><thead><tr><th>新人可以先做</th><th>需要把关或协助</th></tr></thead><tbody>
+      <tr><td>按已确认条件寻访，准备联系理由，进行获许可的基础交流。</td><td>第一次执行或明显不熟时，导师示范并检查方法，不长期代打。</td></tr>
+      <tr><td>整理事实，提出推荐、补问或停止建议。</td><td>新人尚不能稳定判断时，推荐前由负责人审核；审核事实和依据，不重问整通电话。</td></tr>
+      <tr><td>协调已确认的时间，更新系统，汇报异常。</td><td>调整客户条件、保密冲突、薪酬承诺、归属争议和重要入职风险，及时交负责人。</td></tr>
+      </tbody></table></div>
+      <h3>复盘短一点，改进具体一点</h3>
+      <p>开始阶段每天选一个推进例子和一个卡点，时间以能解决问题为准。导师先问新人怎么判断，再补证据、示范一个动作，并约定下一次看哪份真实记录。随着能力稳定减少逐项审核，保留高风险节点把关。</p>
+      <p class="work-note">不要等到某一天才允许接触推荐或面试：真实流程走到哪里，就在那里教。没有出现的录用或异常场景可演练，但不能把演练当真实交付；也不能为了凑训练结果强推人选。</p>`,
+    "sop-recommend": `
+      <h2>推荐：让客户判断值不值得面试</h2>
+      <p class="subtitle">沿用上一章已经核实的事实，不再重做一遍候选人访谈。这一步把你的判断写清楚，取得授权，送到正确的决策人手上。</p>
+      <div class="sop-brief"><b>客户需要的是约面依据，不是入职保证</b><p>关键任务有初步证据、本人愿意了解这份具体机会、主要条件没有已知硬冲突，才能考虑推荐。尚待面试验证的能力明确标出；若缺的是决定要不要面试的基础信息，先补问。</p></div>
+      <h3>发送之前，只检查这次推荐必需的事</h3>
+      <div class="ops"><div class="ops-title">不要重复访谈，检查变化和缺口</div><ol>
+      <li><b>这家客户、这个岗位是否已获许可：</b>向本人说明接收方、岗位和将发送的资料。加了微信、给过简历，不自动等于同意推荐给所有客户。</li>
+      <li><b>有没有重复流程：</b>查公司系统，并按客户约定确认推荐记录和保护期。发生争议让项目负责人核实，不擅自认定归属。</li>
+      <li><b>报告是否准确且必要：</b>核对姓名、任职时间、岗位和候选人确认的经历。不润色出不存在的成果，不随意附上薪资底线、家庭或其他私人信息。</li>
+      </ol></div>
+      <h3 id="tpl-recommend">用一段经历说明推荐理由</h3>
+      <div class="work-record"><b>示例｜现场部署工程师（虚构教学案例）</b><p><strong>建议约面：</strong>他有仓储机器人现场排障经历，与本岗的客户现场问题解决任务相关。<br><strong>初步证据：</strong>本人描述在两个项目中负责通信异常定位，并说明排查顺序和个人负责范围；结果尚待客户技术面验证。<br><strong>愿意了解的原因：</strong>希望承担更完整的系统职责，已了解本岗安排并愿意面谈。<br><strong>已对齐的条件：</strong>客户驻场频率已确认，本人表示接受；已告知现金预算范围，当前无明确冲突，不代表已接受最终方案。<br><strong>面试重点：</strong>独立排障深度，以及从项目交付转向产品团队的适应性。<br><strong>流程：</strong>查重和本次推荐授权已完成，可面试时间按本人约定填写。</p></div>
+      <p>这是示例，不可照抄成真实经历。写自己核实过的内容；“候选人自述”和“已交叉验证”必须分开。</p>
+      <h3>客户有疑问，先判断是缺信息还是不匹配</h3>
+      <div class="scene-grid">
+      <div class="scene-card"><b>“行业不太像”</b><p>“您担心的是他没接触过这类客户，还是缺少现场问题处理经验？前者我可以补相关经历，后者若是必须项，我们就不勉强。”用具体任务解释迁移，不只说学习能力强。</p></div>
+      <div class="scene-card"><b>“这个人太贵”</b><p>“目前差距在现金预算。候选人是否接受其他结构还没有确认，我不先替他答应。您如果没有预算空间，我先和本人核实是否还值得继续。”不暗示期权必然能补现金。</p></div>
+      <div class="scene-card"><b>“先丢到大群里”</b><p>“我按约定发给参与招聘的同事，并附推荐重点。资料涉及本人信息，咱们先确认接收范围，避免无关转发。”必要时先发不识别个人身份的概要。</p></div>
+      <div class="scene-card"><b>“再多发几个比较”</b><p>“可以补来源。不过想先确认，这位主要差在哪条要求？有具体差距，我才能找有区别的人，不然只是增加简历数量。”</p></div>
+      </div>
+      <h3>发送后，拿到可行动的反馈</h3>
+      <div class="table-wrap"><table><thead><tr><th>反馈</th><th>怎么接</th></tr></thead><tbody>
+      <tr><td>愿意面试</td><td>进入面试管理，确认本轮验证重点、参与人和双方时间。</td></tr>
+      <tr><td>需要补信息</td><td>确认具体缺口；能用已有记录回答就不再问候选人，确实未知再约补问。</td></tr>
+      <tr><td>不考虑</td><td>记录与岗位有关的原因；有重复卡点时找负责人校准，不自动归咎于候选人或搜索数量。</td></tr>
+      <tr><td>超过约定时间未回复</td><td>向联系人问清何时可判断，必要时请项目负责人协助。告诉候选人“暂未收到结论”，不要编成“客户正在比较您”。</td></tr>
+      </tbody></table></div>
+      <div class="work-note"><b>系统规范：</b>在原职位和人才记录上留下推荐版本、授权、发送对象、日期、反馈约定与最新结论。完成本步后进入<a href="#sop-interview">面试管理</a>；关键事实不足则回到<a href="#skill-candidate">通话后的判断</a>。</div>`,
+    deliverables: `
+      <h2>工作记录：哪些信息需要留下</h2>
+      <p class="subtitle">这里是检查清单，不是要求新人再做八份文件。已有系统字段、沟通记录和附件能承载的内容，不重复制作表格。</p>
+      <h3>随着流程补信息，不在开头一次填完</h3>
+      <div class="table-wrap"><table><thead><tr><th>节点</th><th>留下什么</th><th>回到正文</th></tr></thead><tbody>
+      <tr><td>接单与岗位定义</td><td>客户确认、关键任务、必要条件、可调整项及当前版本。</td><td><a href="#skill-deconstruct">岗位定义</a></td></tr>
+      <tr><td>寻访</td><td>来源、联系理由、查重情况、联系进度。</td><td><a href="#tpl-longlist">寻访记录示例</a></td></tr>
+      <tr><td>通话后</td><td>事实、岗位兴趣、已知约束、未知项、下一动作。</td><td><a href="#tpl-firstcall">通话记录示例</a></td></tr>
+      <tr><td>需要调整要求</td><td>实际反馈、可选方案、客户决定；更新原岗位记录。</td><td><a href="#skill-industry">市场验证</a></td></tr>
+      <tr><td>推荐与面试</td><td>推荐授权与版本、双方反馈、本轮结论和下一轮目的。</td><td><a href="#tpl-recommend">推荐报告示例</a></td></tr>
+      <tr><td>录用至保证期</td><td>双方确认条件、关键日期、入职与回款进度、异常及处理人。</td><td><a href="#sop-offer">录用沟通</a> · <a href="#sop-onboard">入职跟进</a></td></tr>
+      </tbody></table></div>
+      <h3>交给同事时，能接着做就够</h3>
+      <p>接手人应能找到：目前确认了什么、哪些仍未知、当事人同意到哪一步、下一步谁来做及何时回复。不要把个人猜测写成事实，也不要为了“完整”收集无关私人信息。</p>`,
+    home: `
+      <h2>拿着一张真实职位单，边做边查</h2>
+      <p class="subtitle">这本手册帮助你做判断、推进下一步，不要求你读完所有章节才开始工作。已经在做单，就从目前卡住的环节进入。</p>
+      <div class="work-guide">
+        <h3>先确认你今天要推进什么</h3>
+        <ol class="work-route">
+          <li><a href="#skill-deconstruct">刚接到职位</a><p>向负责人复述：招来做什么、必须有哪段经历、哪些条件不能变。客户、预算或授权不清，回到客户分析；不必自己重做整套客户开发。</p></li>
+          <li><a href="#sop-search">还没有合适的人</a><p>把关键任务翻成来源公司、团队和搜索词。先找一小批有代表性的人，一边联系，一边修正范围。</p></li>
+          <li><a href="#sop-call">找到了人，准备联系</a><p>快速看经历，准备联系理由；征得交流许可，核实相关经历和兴趣，再决定补问、推荐或停止。</p></li>
+          <li><a href="#sop-recommend">人选愿意了解，准备推荐</a><p>写清为什么值得面试、哪里还需验证，取得针对这家公司的推荐许可。随后按面试、录用、入职章节继续推进。</p></li>
+        </ol>
+        <p class="work-note">遇到技术名词，再查具身智能或大模型岗位库；要理解客户为什么付费，读<a href="#sop-flow">做单总览</a>。团队协作、职业能力和带教用于复盘，不是拨第一通电话前的必修门槛。</p>
+      </div>
+      <h3>每天把昨天的线索接起来</h3>
+      <div class="table-wrap"><table><thead><tr><th>时点</th><th>实际动作</th><th>做到什么程度</th></tr></thead><tbody>
+      <tr><td>开始工作时</td><td>先看人才库里到期的回访、面试反馈、录用和入职事项，再安排新增寻访。</td><td>知道今天谁最需要跟进、卡在哪里；不每天从零找人。</td></tr>
+      <tr><td>工作过程中</td><td>按候选人方便的时间联系。聊完补记录，有风险及时找负责人。</td><td>记录事实、未知项、下一步和约定时间，不靠晚上回忆。</td></tr>
+      <tr><td>结束前</td><td>挑出今天推进的一例、卡住的一例，判断明天继续找、换来源、补问还是找客户校准。</td><td>给出一个有依据的调整，不只汇报“打了多少电话”。</td></tr>
+      </tbody></table></div>
+      <h3>卡住时，带着具体问题找同事</h3>
+      <div class="phrase"><div class="ph-scene">别只说“这个岗位太难了”</div><div class="ph-say">“客户要有现场部署经验的人。我找了两类公司：同类产品的人有经验，但目前听到的预算差距较大；系统集成公司有人愿意聊，但产品经验还没核实。能不能帮我看一下，下批优先找哪类？预算是否需要您再和客户确认？”</div><div class="ph-why">带上岗位要求、已尝试的来源、具体反馈和需要的帮助。样本不足就明确说不足，不把个人猜测当市场结论。</div></div>`,
+    "sop-search": `
+      <h2>寻访：把岗位要求变成可联系的人</h2>
+      <p class="subtitle">这一环节解决“到哪里找、先联系谁”。简历只提供联系线索；实际能力、机会意愿和条件，进入下一章再核实。</p>
+      <div class="sop-brief"><b>先拿到已确认的岗位要求</b><p>关键任务、必要经历、可放宽条件、预算与地点、禁止接触范围。若你是接手执行的新人，先和职位负责人对齐，不必重新做客户访谈。</p><div class="sop-brief-grid"><div><span>产出</span><strong>一批有联系理由的人</strong></div><div><span>可以往下走</span><strong>能说清为什么找他</strong></div><div><span>需要回头</span><strong>关键要求互相矛盾或未确认</strong></div></div></div>
+      <h3>先按任务找来源，不只搜职位名称</h3>
+      <div class="table-wrap"><table><thead><tr><th>顺序</th><th>怎么做</th><th>现场部署工程师示例</th></tr></thead><tbody>
+      <tr><td>1. 提取工作任务</td><td>从岗位要求中选出决定成败的实际工作。</td><td>到客户现场排查问题，让设备稳定运行，而非只做实验室算法。</td></tr>
+      <tr><td>2. 找做过这件事的组织</td><td>先找同类业务，再找任务相同的相邻来源。每种来源写清能迁移什么、缺什么。</td><td>同类机器人厂商；也可尝试工业自动化集成商，但需验证产品化经验。</td></tr>
+      <tr><td>3. 找团队和人员</td><td>组合公司、团队、任务词和岗位别称；优先查公司人才库，再补外部渠道。</td><td>交付、应用工程、系统集成、现场调试，不只搜“部署工程师”。</td></tr>
+      <tr><td>4. 快速筛选后联系</td><td>留下对应经历和待核实问题，不等整份人才地图画完。</td><td>简历提到现场交付，先问他是独立排障，还是仅按方案实施。</td></tr>
+      </tbody></table></div>
+      <h3>名单只保留能指导下一步的信息</h3>
+      <p>人才库已有记录先查重、看最近联系和归属规则，避免多人重复打扰。不要另造一张脱离公司系统的私人名单。</p>
+      <div class="work-record" id="tpl-longlist"><b>一条可执行的寻访记录</b><p><strong>来源：</strong>某机器人厂商交付团队，公开职业资料。<br><strong>联系理由：</strong>做过仓储现场调试，可能符合关键任务。<br><strong>待核实：</strong>独立排障还是配合实施；当前信息是否仍有效。<br><strong>进度：</strong>未联系／已邀约／约定通话；日期、负责人和下一动作。</p><p>只存与招聘有关且来源合规的信息。联系方式来源被问到时如实说明，不编造共同联系人。</p></div>
+      <h3>找不到人，先定位卡在什么地方</h3>
+      <div class="scene-grid">
+      <div class="scene-card"><b>搜索结果少</b><p>先查岗位别称、搜索条件和公司覆盖是否过窄。换一组任务词或相邻来源试找；尚未接触到人，不能直接说“市场没有人”。</p></div>
+      <div class="scene-card"><b>简历很多，经历对不上</b><p>回看你是否只按行业和头衔搜索。选两份明显不符的简历和负责人对照，找出缺失的关键任务，再改搜索条件。</p></div>
+      <div class="scene-card"><b>联系了，回复少</b><p>分开检查信息相关性、渠道有效性、联系时间和触达说明。适度换方式，不密集追打；没回复不等于没兴趣，更不等于预算有问题。</p></div>
+      <div class="scene-card"><b>聊过的人反复卡在同一条件</b><p>整理同任务、同级别的真实反馈，进入<a href="#skill-industry">市场验证</a>。不要自行放宽客户必须条件，也不要因为几个人拒绝就停单。</p></div>
+      </div>
+      <h3>名单形成后，直接进入联系与核实</h3>
+      <p>每找到一个有相关线索的人，就可以进入<a href="#sop-call">简历、电话与判断</a>；无需等凑齐人数。大范围、保密或中高端岗位需要更完整地图时，再查<a href="#exec-mapping">中高端人才寻访</a>。</p>
+      <div class="work-note"><b>给负责人的反馈：</b>“我准备先找这两类来源，分别因为这两段任务经验。第一批联系后，重点看相邻来源能不能胜任；如果都不成立，再和您调整。”</div>`,
+    "skill-industry": `
+      <h2>市场验证：用实际反馈调整这张单</h2>
+      <p class="subtitle">市场验证贯穿寻访与电话，不是找人前先交一份行业报告。它回答的是：原来的要求与条件，是否能找到并吸引合适的人。</p>
+      <div class="sop-brief"><b>出现重复卡点，再集中校准</b><p>有可推进的人继续推进，同时验证其他来源。样本多少取决于岗位稀缺度、来源覆盖和反馈质量；没有统一的“满十人才能推荐”。</p></div>
+      <h3>先分清证据，不把没回复当成市场结论</h3>
+      <div class="table-wrap"><table><thead><tr><th>看到的情况</th><th>能说明什么</th><th>还不能说明什么</th></tr></thead><tbody>
+      <tr><td>某搜索组合几乎没结果</td><td>目前搜索方法或来源覆盖不足。</td><td>不能证明整个市场没有这类人才。</td></tr>
+      <tr><td>邀约多、回复少</td><td>触达效果需要检查。</td><td>不能直接推断薪酬低或所有人都不愿动。</td></tr>
+      <tr><td>同类任务、同级别人选明确拒绝预算</td><td>预算可能影响这类来源的吸引力。</td><td>不能拿期望薪酬当已成交价格，也不能外推到所有来源。</td></tr>
+      <tr><td>相邻来源愿意聊，但关键经验不足</td><td>该来源需要验证迁移能力和补齐成本。</td><td>不能为了有简历可交，就把必须经验改成加分项。</td></tr>
+      </tbody></table></div>
+      <h3>给客户选择，不只报告困难</h3>
+      <div class="phrase"><div class="ph-scene">关键经验与预算对不上</div><div class="ph-say">“目前接触到的几位同类项目负责人，主要卡在现金预算；相邻行业有愿意了解的人，但需要您判断是否接受他们补产品经验。我建议两条路：预算不变就试面一位相邻来源，重点验证迁移能力；坚持同类经验，就请您再确认预算空间。现有反馈还不能代表全部市场，我们会继续补样本。”</div><div class="ph-why">展示可比较、必要时匿名的任务经历和条件差距。让有权的人决定取舍；新人负责收集事实，不替客户承诺放宽。</div></div>
+      <h3>决定之后，更新岗位要求和搜索动作</h3>
+      <div class="table-wrap"><table><thead><tr><th>决定</th><th>后续动作</th></tr></thead><tbody>
+      <tr><td>要求不变，继续找</td><td>增加此前未覆盖的来源，写清下一次复盘时间，不重复同样的无效动作。</td></tr>
+      <tr><td>允许相邻来源或调整级别</td><td>由职位负责人确认新要求，更新系统岗位记录，让所有参与寻访的人用同一版本。</td></tr>
+      <tr><td>调整预算、地点或工作安排</td><td>先取得客户确认，再向受影响候选人说明。尚在申请的条件不能当已批准条件宣传。</td></tr>
+      <tr><td>暂停</td><td>记录未解决的矛盾、恢复条件和负责人；告知正在推进的人，不让他们无期限等待。</td></tr>
+      </tbody></table></div>
+      <p class="work-note">不懂某类技术人才的来源，按需查<a href="#skill-embodied">具身智能</a>或<a href="#skill-llm">大模型</a>。行业研究用于解释来源与任务，不代替本单真实反馈。</p>`,
+    "sop-call": `
+      <h2>候选人沟通：从简历线索到推荐判断</h2>
+      <p class="subtitle">看简历、准备、通话、整理判断是一组连续动作。首通可以只有两分钟，也可以继续深聊；不必在一次电话里问完所有问题。</p>
+      <div class="sop-brief"><b>分别看两个完成标准</b><div class="sop-brief-grid"><div><span>首次接触完成</span><strong>对方知道来意，明确是否继续</strong></div><div><span>可以推荐</span><strong>有相关证据、愿了解具体岗位、已授权</strong></div><div><span>信息不足</span><strong>明确补什么，不猜、不硬推</strong></div></div><p>“愿意了解机会”不等于“答应入职”。不满意现工作也不是必需条件；真正需要确认的是，对方是否愿意为这份具体机会投入下一步时间。</p></div>
+      <h3 id="resume">看简历：决定联系谁、核实什么</h3>
+      <p>对照岗位最重要的任务，看他做过什么、在什么环境中完成、留下什么成果。只看和这个岗位相关的要求，不要求每位技术候选人同时懂训练、控制和交付。</p>
+      <div class="table-wrap"><table><thead><tr><th>看到的线索</th><th>现在的判断</th><th>电话里核实</th></tr></thead><tbody>
+      <tr><td>有相近项目，但职责写得笼统</td><td>值得联系，尚不能证明能胜任。</td><td>“这个项目您具体负责哪一段？哪些决定由您来做？”</td></tr>
+      <tr><td>头衔很高或公司很知名</td><td>提供来源线索，不直接等于能力或级别。</td><td>“实际负责的范围、资源和结果分别是什么？”</td></tr>
+      <tr><td>短经历或空档</td><td>时间线待理解，不贴“不稳定”标签。</td><td>“这两次变化分别是什么情况？您这次选择会特别看重什么？”</td></tr>
+      <tr><td>公开信息少</td><td>有关键任务线索就可短聊核实；没有线索先补来源。</td><td>“看到您之前做过 X，现在还在负责这个方向吗？”</td></tr>
+      </tbody></table></div>
+      <p>明确不符合本岗位不可调整的条件，可以停止本单联系；信息缺失只是待核实，不等于不符合。</p>
+      <h3 id="skill-firstcall">拨号前：准备理由、事实和一个问题</h3>
+      <div class="work-record"><b>一张简短的通话提纲</b><p><strong>为什么找他：</strong>有仓储机器人现场调试经历。<br><strong>能准确介绍的机会：</strong>客户做什么、招来解决什么、地点与出差安排、已确认的预算；不确定的地方标出。<br><strong>最想核实：</strong>是否亲自独立排查过现场故障。<br><strong>合理下一步：</strong>有兴趣就约深聊；不方便就约时间；明确拒绝就停止。</p></div>
+      <p>查看系统最近联系记录和归属。不要根据简历更新日期猜他急着离职，不向不认识的人假装熟悉。</p>
+      <h3>第一次接触：讲清来意，让对方选择</h3>
+      <div class="phrase"><div class="ph-scene">通过职业资料找到的候选人</div><div class="ph-say">“您好，我是××公司的招聘顾问××。看到您做过仓储机器人现场交付，我们在帮一家机器人公司找负责现场问题解决的人，所以想联系您。现在方便我简单说明一下吗？不方便可以另约。”</div><div class="ph-why">真实说明身份、来意和联系依据。对方先问公司、工作地点或预算，就先回答已确认的信息；不必坚持先问完你的问题。</div></div>
+      <div class="scene-grid">
+      <div class="scene-card"><b>现在没空</b><p>“明白，您看什么时候方便？也可以先发一段岗位信息，您决定要不要继续。”对方未同意就不要连续追问。</p></div>
+      <div class="scene-card"><b>问联系方式哪里来的</b><p>按实际来源回答。如果无法确认，承认需要核查，不编造公开来源或介绍人。对方要求不再联系，按公司规则记录并停止。</p></div>
+      <div class="scene-card"><b>不想换工作</b><p>“了解。您是不考虑任何机会，还是暂时不主动找？如果完全不看，我就不往下介绍了。”愿听再说相关信息；不把维护关系当纠缠理由。</p></div>
+      <div class="scene-card"><b>先问薪酬</b><p>“目前确认的现金预算是×到×，其他部分还要核实。这个范围如果明显不合适，我们可以先不占彼此时间。”没有确认预算就直说，不虚报吸引。</p></div>
+      </div>
+      <h3>愿意继续聊：核实经历，再对齐机会</h3>
+      <div class="ops"><div class="ops-title">围绕一个相关项目，把关键事实问清</div><ol>
+      <li><b>当时要解决什么：</b>“这个项目最初卡在哪里？做到什么才算成功？”</li>
+      <li><b>他本人做了什么：</b>“您负责哪一部分？您举一个亲自处理的难点就好。”分清团队结果与个人贡献。</li>
+      <li><b>结果如何：</b>“后来改善到什么程度？是怎样确认的？”不能披露数字时，可谈判断方法和非保密的结果范围，不索要机密。</li>
+      <li><b>与本岗位有什么差别：</b>“这里可能更常驻现场、资源也少一些，您怎么看这种工作方式？”先如实描述，再听接受程度。</li>
+      </ol></div>
+      <p>新人不需要装成技术面试官。听到不懂的术语，可以请他用实际问题解释；仍不能判断的专业深度，写成客户面试要验证的点。不能把“表达流利”直接记成“技术强”。</p>
+      <div class="phrase"><div class="ph-scene">候选人一直说“我们团队做了”</div><div class="ph-say">“团队的成果我理解了。为了后面不把您的贡献说错，能不能选一个您亲自负责的环节，讲一下遇到什么问题、您怎么处理的？”</div><div class="ph-why">一次追问一个问题。回答仍模糊就记录证据不足，别代替候选人补故事。</div></div>
+      <h3>按候选人的情况，决定问到多深</h3>
+      <div class="table-wrap"><table><thead><tr><th>实际情况</th><th>重点问什么、怎么说</th><th>下一步</th></tr></thead><tbody>
+      <tr><td>主动求职，已有其他面试</td><td>“您现在比较机会最看重哪两件事？其他流程大概到哪一步，有没有需要做决定的时间？”不必追问每家公司的名字。</td><td>确认时间窗口，及时向负责人反馈，不能承诺客户必定加速。</td></tr>
+      <tr><td>在职满意，但愿意了解</td><td>“您现在做得不错，这份机会里哪部分值得进一步了解？哪些条件不满足就不考虑？”</td><td>有具体兴趣即可约下一轮，不强迫制造离职理由。</td></tr>
+      <tr><td>刚离职或被裁</td><td>“这次您最希望找什么样的工作？时间安排上有什么需要我提前了解的？”只有对方愿意时再谈离职经过。</td><td>核实匹配和选择标准，不默认着急、情绪差或可压价。</td></tr>
+      <tr><td>资深专家或管理者，只给很短时间</td><td>先讲职责、业务难题和决策范围：“如果方向值得聊，我再安排您方便的时间把背景补全。”</td><td>先确认方向；涉及保密岗位或授权边界，请项目负责人参与。</td></tr>
+      <tr><td>只想打听，不愿进入流程</td><td>“可以先交流。如果目前不考虑和这家公司沟通，我就不提交您的资料。”</td><td>对方同意后维护，不计为本单可推荐。</td></tr>
+      <tr><td>薪酬、地点或出差有分歧</td><td>“这是完全不接受，还是要看频次和补偿安排？我先把真实条件核实给您。”薪资可先谈期望区间，不强迫提供流水。</td><td>能澄清则补问；已明确不可调和就结束本单。</td></tr>
+      </tbody></table></div>
+      <h3 id="skill-candidate">聊完再判断：推进、补问、维护还是停止</h3>
+      <div class="table-wrap"><table><thead><tr><th>判断</th><th>依据</th><th>具体动作</th></tr></thead><tbody>
+      <tr><td>可以推荐</td><td>关键任务有初步事实支持；了解具体机会并愿意面谈；主要条件没有已知硬冲突；同意向该客户提交约定资料。</td><td>查重并按公司规则确认归属，写推荐理由、待验证项和授权记录。</td></tr>
+      <tr><td>先补问或核实客户条件</td><td>缺的是影响是否值得面试的关键信息，例如职责范围或必须常驻的地点。</td><td>明确谁核实、核实什么、何时回复，不笼统标成“待跟进”。</td></tr>
+      <tr><td>保持联系</td><td>当前岗位不合适，或本人暂不进入流程，但愿意以后交流。</td><td>记录关注方向和约定触点，不频繁群发岗位。</td></tr>
+      <tr><td>停止本单</td><td>明确拒绝、必要条件不符，或关键事实疑点无法澄清。</td><td>说明本单不再推进的原因；不把一次不匹配变成人的永久负面标签。</td></tr>
+      </tbody></table></div>
+      <p class="work-note"><b>哪些信息可以后续核实：</b>更深的技术能力由客户面试验证，正式薪酬方案和入职安排随流程确认。推荐前要披露影响判断的未知项，但不要求候选人提前承诺接受未来的录用条件。</p>
+      <h3 id="tpl-firstcall">把通话变成一条能接着做的记录</h3>
+      <div class="work-record"><b>示例｜现场部署工程师（虚构教学案例）</b><p><strong>事实：</strong>本人描述负责两个仓储项目的现场排障，举了定位通信异常的例子；具体效果尚未独立验证。<br><strong>岗位兴趣：</strong>愿了解更完整的系统职责，没有急迫离职需求。<br><strong>已知条件：</strong>接受短期出差，不接受长期驻外；预算范围已告知。<br><strong>待核实：</strong>客户实际驻场频率；独立解决复杂故障的深度。<br><strong>下一步：</strong>顾问周三前问清驻场安排，再向本人回复。本人尚未授权推荐，不先发简历。</p></div>
+      <p>在公司系统对应的人才、职位和沟通记录中更新，不另建一份重复台账。字段名称按公司现有配置；事实、判断、未知项分开写，只记录业务必需的信息。</p>
+      <div class="phrase"><div class="ph-scene">收尾时把承诺说具体</div><div class="ph-say">“今天看下来，工作内容有相关性，主要还差驻场频率没说清。我周三前确认后回复您；您再决定是否愿意和这家公司聊。在您确认之前，我不会提交资料。”</div><div class="ph-why">若已经满足推荐条件，转到<a href="#sop-recommend">推荐</a>；若多位相关人选都卡在同一客户条件，汇总到<a href="#skill-industry">市场验证</a>。</div></div>`
+  };
+
+  function applyFocusedSections() {
+    ["resume", "skill-firstcall", "skill-candidate"].forEach((id) => {
+      document.getElementById(id)?.remove();
+      document.querySelectorAll('.nav-link[href="#' + id + '"]').forEach((link) => link.remove());
+    });
+    Object.entries(focusedSections).forEach(([id, content]) => {
+      const section = document.getElementById(id);
+      if (section) section.innerHTML = content;
+    });
+    const growth = document.querySelector(".nav-group-growth");
+    const resources = document.querySelector(".nav-group-resources");
+    if (growth && resources) resources.before(growth);
+    const growthTitle = growth?.querySelector(".group-title");
+    if (growthTitle) growthTitle.textContent = "协作与成长：结合做单复盘";
+    const callLink = document.querySelector('.nav-link[href="#sop-call"]');
+    if (callLink) callLink.innerHTML = '<span class="sn">2</span>简历、电话与判断';
+    const recordsLink = document.querySelector('.nav-link[href="#deliverables"]');
+    if (recordsLink) recordsLink.textContent = "工作记录：哪些信息要留下";
+  }
   function collapseResearchTail(sectionId) {
     const section = document.getElementById(sectionId);
     if (!section) return;
@@ -233,13 +452,14 @@
     <h3>猎头实际在解决四种不确定</h3>
     <div class='sop-principles'><div><span>01</span><b>需求不确定</b><p>JD 写的是偏好，业务真正需要的是一个人在特定资源和约束下解决问题。</p><em>先问：他入职六个月后，什么结果算做成？</em></div><div><span>02</span><b>人选不透明</b><p>简历、面试表现和真实能力不是一回事；候选人对机会的兴趣也会变。</p><em>先找：他亲自负责过什么，结果如何，换到这里还能不能复现？</em></div><div><span>03</span><b>决策不协同</b><p>用人经理、HR、老板和候选人掌握的信息不同，常常在不同时间才表态。</p><em>先管：谁拍板、谁会否决、缺什么事实、何时必须决定？</em></div><div><span>04</span><b>承诺不稳定</b><p>接受 Offer 不等于入职，入职不等于留下；外部机会和内部变化会持续发生。</p><em>先盯：哪些条件还没兑现，什么信号出现就要提前处理？</em></div></div>
     <div class='callout tip'><span class='tt'>专业边界</span>不是把每个人都说服过来。真正专业的顾问，能在不合适时对客户说“这个条件市场上不成立”，也能对候选人说“这个机会不一定适合你”。</div>
-    <h3>一张单只过六道关</h3>
-    <div class='gate-row'><div class='gate'><span>01</span><b>确认值得做</b><em>HC、预算、拍板人和节奏真实吗？</em></div><div class='gate'><span>02</span><b>定义成功</b><em>这个人进来后究竟要把什么事做成？</em></div><div class='gate'><span>03</span><b>校准市场</b><em>市场有没人、愿不愿动、条件够不够？</em></div><div class='gate'><span>04</span><b>评估人选</b><em>能做、想来、能入职、风险可控吗？</em></div><div class='gate'><span>05</span><b>促成决定</b><em>双方还缺什么信息，谁该在何时拍板？</em></div><div class='gate'><span>06</span><b>保护结果</b><em>入职、回款、保证期有哪些失控点？</em></div></div>
+    <h3>一张单要持续回答的六个问题</h3>
+    <p>这些问题会交叉出现，不是六次考试。寻访和通话可以并行，市场反馈随时用于校准；已满足推荐条件的人继续推进，不必等全市场研究完成。</p>
+    <div class='gate-row'><div class='gate'><span>01</span><b>确认值得做</b><em>HC、预算、拍板人和节奏真实吗？</em></div><div class='gate'><span>02</span><b>定义成功</b><em>这个人进来后究竟要把什么事做成？</em></div><div class='gate'><span>03</span><b>校准市场</b><em>寻访和通话反馈，是否支持原来的要求？</em></div><div class='gate'><span>04</span><b>评估人选</b><em>有相关证据、愿了解具体机会、主要条件无硬冲突吗？</em></div><div class='gate'><span>05</span><b>促成决定</b><em>双方还缺什么信息，谁该在何时拍板？</em></div><div class='gate'><span>06</span><b>保护结果</b><em>入职、回款、保证期有哪些失控点？</em></div></div>
     <h3>每一道关，交的是能推动下一个决定的证据</h3>
-    <div class='table-wrap'><table><thead><tr><th>阶段</th><th>必须回答的问题</th><th>结论至少要有的事实</th><th>不过关时做什么</th></tr></thead><tbody><tr><td><b>接单</b></td><td>这单值不值得投入？</td><td>HC、预算、业务动因、拍板人、反馈承诺。</td><td>只做小范围验证，不重投入。</td></tr><tr><td><b>岗位定义</b></td><td>什么样的人能做成？</td><td>成功结果、必须项、可放宽项、绝对不合适项。</td><td>回到用人经理，把取舍写清。</td></tr><tr><td><b>市场验证</b></td><td>原条件在市场上成立吗？</td><td>首批样本、来源、薪酬、意愿与拒绝原因。</td><td>调条件、调薪、换来源或暂停。</td></tr><tr><td><b>候选人判断</b></td><td>为什么是他？</td><td>任务证据、动机、入职条件、风险和待核实项。</td><td>补事实，不靠感觉推荐。</td></tr><tr><td><b>推进决定</b></td><td>为什么现在能做决定？</td><td>双方顾虑、解决方案、责任人、下次决定时间。</td><td>只解决当前卡点，不盲目加轮次。</td></tr><tr><td><b>保护结果</b></td><td>什么会让结果倒退？</td><td>离职进度、岗位兑现、入职适应、合同与回款状态。</td><td>先修复风险，再判断责任和升级路径。</td></tr></tbody></table></div>
+    <div class='table-wrap'><table><thead><tr><th>阶段</th><th>必须回答的问题</th><th>结论至少要有的事实</th><th>不过关时做什么</th></tr></thead><tbody><tr><td><b>接单</b></td><td>这单值不值得投入？</td><td>HC、预算、业务动因、拍板人、反馈承诺。</td><td>只做小范围验证，不重投入。</td></tr><tr><td><b>岗位定义</b></td><td>什么样的人能做成？</td><td>成功结果、必须项、可放宽项、绝对不合适项。</td><td>回到用人经理，把取舍写清。</td></tr><tr><td><b>市场验证</b></td><td>原条件在市场上成立吗？</td><td>首批样本、来源、薪酬、意愿与拒绝原因。</td><td>调条件、调薪、换来源或暂停。</td></tr><tr><td><b>候选人判断</b></td><td>为什么是他？</td><td>任务证据、具体岗位兴趣、已知约束、推荐授权与待核实项。</td><td>补事实，不靠感觉推荐。</td></tr><tr><td><b>推进决定</b></td><td>为什么现在能做决定？</td><td>双方顾虑、解决方案、责任人、下次决定时间。</td><td>只解决当前卡点，不盲目加轮次。</td></tr><tr><td><b>保护结果</b></td><td>什么会让结果倒退？</td><td>离职进度、岗位兑现、入职适应、合同与回款状态。</td><td>先修复风险，再判断责任和升级路径。</td></tr></tbody></table></div>
     <h3>国际专业团队怎样把流程做稳</h3>
     <p>成熟的国际猎头团队并不是“流程更多”，而是把以下六件事一次做好，并分别放在对应阶段，不来回重复。</p>
-    <div class='table-wrap'><table><thead><tr><th>统一执业标准</th><th>在本手册落在哪一关</th><th>顾问必须守住什么</th></tr></thead><tbody><tr><td><b>先签清项目边界</b><br>范围、角色、费用、保密、利益冲突、反馈和保证期在启动时说清。</td><td>客户分析</td><td>没有授权、负责人和反馈机制，只做市场验证；不让候选人简历在多个客户间“漂”。</td></tr><tr><td><b>先做 Success Profile（成功画像）</b><br>从业务任务、组织环境和成功结果，倒推出能力、经历、领导方式和关键取舍。</td><td>岗位解构</td><td>不把 JD 当画像；不只看行业和公司名；任何“必须有”都要有验证方式。</td></tr><tr><td><b>先用样本校准，再放大寻访</b><br>先画目标公司与首批名单，和客户共同确认市场、薪酬和来源假设。</td><td>市场验证、寻访</td><td>不闷头找一周再汇报；样本推翻假设时，先改岗位条件，不粉饰名单。</td></tr><tr><td><b>用多重证据判断人</b><br>既看已做成的事，也看能力、适应空间、动机、文化和风险。</td><td>候选人判断、推荐</td><td>一通电话和一份简历都不够；结论要把事实、优势、短板、待核实项分开写。</td></tr><tr><td><b>把候选人当合作对象</b><br>授权后再推荐；过程透明；结束时给明确反馈，持续保护敏感信息。</td><td>电话、面试、风控</td><td>不诱导、不夸大、不泄露；客户暂停或拒绝，也要及时告诉候选人并说明下一步。</td></tr><tr><td><b>把入职当成搜索的最后一段</b><br>背调、Offer、反要约、团队融入和早期目标是一个连续风险链。</td><td>Offer、入职、保证期</td><td>不把签字当成交；要核对岗位承诺是否兑现、关键关系是否接上、风险是否有修复人。</td></tr></tbody></table></div>
+    <div class='table-wrap'><table><thead><tr><th>统一执业标准</th><th>在本手册落在哪一关</th><th>顾问必须守住什么</th></tr></thead><tbody><tr><td><b>先签清项目边界</b><br>范围、角色、费用、保密、利益冲突、反馈和保证期在启动时说清。</td><td>客户分析</td><td>没有授权、负责人和反馈机制，只做市场验证；不让候选人简历在多个客户间“漂”。</td></tr><tr><td><b>先做 Success Profile（成功画像）</b><br>从业务任务、组织环境和成功结果，倒推出能力、经历、领导方式和关键取舍。</td><td>岗位解构</td><td>不把 JD 当画像；不只看行业和公司名；任何“必须有”都要有验证方式。</td></tr><tr><td><b>先用样本校准，再放大寻访</b><br>先画目标公司与首批名单，和客户共同确认市场、薪酬和来源假设。</td><td>市场验证、寻访</td><td>不闷头找一周再汇报；样本推翻假设时，先改岗位条件，不粉饰名单。</td></tr><tr><td><b>用多重证据判断人</b><br>既看已做成的事，也看能力、适应空间、动机、文化和风险。</td><td>候选人判断、推荐</td><td>不按通话次数判定质量；推荐需要初步证据，深入能力留给客户面试验证，结论中标明未知项。</td></tr><tr><td><b>把候选人当合作对象</b><br>授权后再推荐；过程透明；结束时给明确反馈，持续保护敏感信息。</td><td>电话、面试、风控</td><td>不诱导、不夸大、不泄露；客户暂停或拒绝，也要及时告诉候选人并说明下一步。</td></tr><tr><td><b>把入职当成搜索的最后一段</b><br>背调、Offer、反要约、团队融入和早期目标是一个连续风险链。</td><td>Offer、入职、保证期</td><td>不把签字当成交；要核对岗位承诺是否兑现、关键关系是否接上、风险是否有修复人。</td></tr></tbody></table></div>
     <div class='callout tip'><span class='tt'>一条工作纪律</span>卡住时，不是更用力找人。先判断缺的是<b>岗位事实、市场证据、人选信息，还是双方决定</b>；只回到缺失的那一关补齐，不把所有动作重做一遍。</div>
     <div class='table-wrap'><table><thead><tr><th>SOP 原则</th><th>系统怎样承接</th></tr></thead><tbody><tr><td>一张单只有一个真相源</td><td>每个职位只在一个职位项目和职位对话中推进，禁止个人表格另起流程。</td></tr><tr><td>结论必须可追溯</td><td>每次沟通至少留四件事：新事实、你的结论、唯一下一步、负责人和日期。</td></tr><tr><td>风险必须看得见</td><td>待核实、暂停、拒绝、Offer、入职异常和回款卡点都更新状态，不靠口头同步。</td></tr></tbody></table></div>`
   );
@@ -281,12 +501,12 @@
 
   rebuildSection(
     "faq-center",
-    "<p class='subtitle'>问题速查只负责导航：你遇到什么症状，就告诉你先去哪个章节。具体判断和处理放在风险、接单、寻访、沟通、Offer 等正文里，避免同一套答案写三遍。</p><h3>按症状找到第一站</h3><div class='table-wrap'><table><thead><tr><th>你现在卡在哪</th><th>先看哪里</th><th>要带着什么问题去</th></tr></thead><tbody><tr><td>客户不清楚要谁、不给反馈</td><td><a href='#client-analysis'>客户分析</a> / <a href='#skill-deconstruct'>岗位定义</a></td><td>单子真实吗？人到岗后要做什么？谁拍板？</td></tr><tr><td>市场上找不到、薪酬不匹配</td><td><a href='#skill-industry'>市场验证</a> / <a href='#sop-search'>寻访</a></td><td>是没人、买不起，还是不愿动？</td></tr><tr><td>候选人聊不深、总是没下文</td><td><a href='#sop-call'>电话沟通</a> / <a href='#skill-candidate'>候选人判断</a></td><td>他能做、想来、能入职、风险分别是什么？</td></tr><tr><td>面试拖、Offer 反复、入职反悔</td><td><a href='#sop-interview'>面试管理</a> / <a href='#sop-offer'>Offer</a> / <a href='#sop-onboard'>入职跟进</a></td><td>哪个人没做决定？还缺什么事实？</td></tr><tr><td>履历、竞业、授权、背调出现问题</td><td><a href='#risk'>全流程风险处理</a></td><td>先核实什么、谁能授权、什么情况必须停？</td></tr></tbody></table></div><div class='callout tip'><span class='tt'>使用方式</span>速查只帮你定位。不要在这里找“万能话术”；进入对应章节后，按事实、风险和下一步动作处理。</div>"
+    "<p class='subtitle'>问题速查只负责导航：你遇到什么症状，就告诉你先去哪个章节。具体判断和处理放在风险、接单、寻访、沟通、Offer 等正文里，避免同一套答案写三遍。</p><h3>按症状找到第一站</h3><div class='table-wrap'><table><thead><tr><th>你现在卡在哪</th><th>先看哪里</th><th>要带着什么问题去</th></tr></thead><tbody><tr><td>客户不清楚要谁、不给反馈</td><td><a href='#client-analysis'>客户分析</a> / <a href='#skill-deconstruct'>岗位定义</a></td><td>单子真实吗？人到岗后要做什么？谁拍板？</td></tr><tr><td>市场上找不到、薪酬不匹配</td><td><a href='#skill-industry'>市场验证</a> / <a href='#sop-search'>寻访</a></td><td>是没人、买不起，还是不愿动？</td></tr><tr><td>候选人聊不深、总是没下文</td><td><a href='#sop-call'>电话沟通</a> / <a href='#skill-candidate'>候选人判断</a></td><td>他做过什么、是否愿意了解这个岗位、什么条件还要核实？</td></tr><tr><td>面试拖、Offer 反复、入职反悔</td><td><a href='#sop-interview'>面试管理</a> / <a href='#sop-offer'>Offer</a> / <a href='#sop-onboard'>入职跟进</a></td><td>哪个人没做决定？还缺什么事实？</td></tr><tr><td>履历、竞业、授权、背调出现问题</td><td><a href='#risk'>全流程风险处理</a></td><td>先核实什么、谁能授权、什么情况必须停？</td></tr></tbody></table></div><div class='callout tip'><span class='tt'>使用方式</span>速查只帮你定位。不要在这里找“万能话术”；进入对应章节后，按事实、风险和下一步动作处理。</div>"
   );
 
   rebuildSection(
     "deliverables",
-    "<p class='subtitle'>交付物中心只放“做单时要产出的判断文件”。模板的使用方法、系统与资料放到下一章，避免同一份表重复出现。</p><h3>一张单只需要八类交付物</h3><div class='table-wrap'><table><thead><tr><th>节点</th><th>交付物</th><th>它要解决的问题</th></tr></thead><tbody><tr><td>接单</td><td>客户信息卡</td><td>单子是否真实、谁拍板、风险在哪。</td></tr><tr><td>岗位定义</td><td>岗位评分卡 / Search Brief</td><td>什么叫合适、范围从哪里开始找。</td></tr><tr><td>市场验证</td><td>首批市场结论</td><td>条件是否要调、为什么调。</td></tr><tr><td>寻访</td><td>Longlist / 人才地图</td><td>先找谁、每个人是什么状态。</td></tr><tr><td>候选人判断</td><td>候选人评估卡</td><td>能做、想来、能入职、风险是否有事实。</td></tr><tr><td>推荐与面试</td><td>推荐报告 / 面试决策记录</td><td>客户为什么要见、每轮要验证什么。</td></tr><tr><td>Offer 与入职</td><td>接受条件与风险表</td><td>双方是否真正接受、哪里可能反悔。</td></tr><tr><td>回款与保证期</td><td>回款表 / 保证期触点记录</td><td>责任人、时间点、异常处理。</td></tr></tbody></table></div><div class='callout'><span class='tt'>标准</span>每份交付物都必须能让下一位接手的人在 3 分钟内知道：已确认的事实、未确认的风险、下一步由谁在何时完成。</div>"
+    "<p class='subtitle'>工作记录中心只放“做单时要产出的判断文件”。模板的使用方法、系统与资料放到下一章，避免同一份表重复出现。</p><h3>一张单只需要八类交付物</h3><div class='table-wrap'><table><thead><tr><th>节点</th><th>交付物</th><th>它要解决的问题</th></tr></thead><tbody><tr><td>接单</td><td>客户信息卡</td><td>单子是否真实、谁拍板、风险在哪。</td></tr><tr><td>岗位定义</td><td>岗位评分卡 / Search Brief</td><td>什么叫合适、范围从哪里开始找。</td></tr><tr><td>市场验证</td><td>首批市场结论</td><td>条件是否要调、为什么调。</td></tr><tr><td>寻访</td><td>Longlist / 人才地图</td><td>先找谁、每个人是什么状态。</td></tr><tr><td>候选人判断</td><td>候选人评估卡</td><td>能做、想来、能入职、风险是否有事实。</td></tr><tr><td>推荐与面试</td><td>推荐报告 / 面试决策记录</td><td>客户为什么要见、每轮要验证什么。</td></tr><tr><td>Offer 与入职</td><td>接受条件与风险表</td><td>双方是否真正接受、哪里可能反悔。</td></tr><tr><td>回款与保证期</td><td>回款表 / 保证期触点记录</td><td>责任人、时间点、异常处理。</td></tr></tbody></table></div><div class='callout'><span class='tt'>标准</span>每份交付物都必须能让下一位接手的人在 3 分钟内知道：已确认的事实、未确认的风险、下一步由谁在何时完成。</div>"
   );
 
   rebuildSection(
@@ -296,7 +516,7 @@
 
   rebuildSection(
     "path",
-    "<p class='subtitle'>新人不需要背完手册才开始做单。60 天的目标，是在适合的岗位难度下，学会用同一套判断方法跑完一次真实闭环；是否独立，按能力短板分流，不按统一成绩单判定。</p><h3>先判断新人缺什么，再安排训练</h3><div class='table-wrap'><table><thead><tr><th>新人类型</th><th>常见短板</th><th>60 天重点</th></tr></thead><tbody><tr><td><b>研究搜寻强、开口弱</b></td><td>名单很长，电话不敢打或问不深。</td><td>跟听、角色扮演、首通电话复盘。</td></tr><tr><td><b>销售感强、方法弱</b></td><td>推进快，但事实、记录和风险缺失。</td><td>接单评分、岗位评分卡、推荐前核实。</td></tr><tr><td><b>有招聘经验、换了赛道</b></td><td>懂流程，不懂公司、岗位和人才迁移。</td><td>行业判断、人才地图、与用人经理校准。</td></tr></tbody></table></div><h3>第 1—10 天：会接单，也会建第一版名单</h3><p>旁听真实 Kickoff（项目启动会）和候选人电话；用一个低难度真实岗位完成客户信息卡、岗位评分卡和 20 人 Longlist（寻访长名单）。导师只检查：事实是否完整、范围是否合理、每个人是否有来源和下一步。</p><h3>第 11—30 天：在陪同下跑通一次</h3><p>独立完成首批触达、3—5 通深聊、一次市场校准和一份推荐报告。导师在推荐前和关键电话后 Review；训练重点不是凑 Offer，而是能解释“为什么这个人值得推、还缺什么证据”。</p><h3>第 31—60 天：承担一张小而完整的单</h3><p>选择职责清楚、反馈正常的中级岗位，独立推进到面试或 Offer 节点；同时维护人才库、写一次失败复盘。高管、极稀缺技术岗或决策链混乱的岗位，不作为新人独立考核样本。</p><h3>第 60 天怎么决定下一步</h3><div class='keypoints'><div class='kp'><b>可以独立</b>：能说清事实、判断、风险和下一步，并能按节奏向客户与候选人推进。</div><div class='kp'><b>带着短板独立</b>：只在电话、画像或 Offer 等一个环节继续由导师把关，其他环节独立。</div><div class='kp'><b>继续带教</b>：不是“没成单”，而是关键事实、职业诚信或复盘能力仍不稳定；明确补哪一项、再观察两周。</div></div><div class='callout'><span class='tt'>带教原则</span>每周只抓一个最影响成单的动作。先让新人把一张单讲清楚，再增加岗位数量；不把 Offer 数量当成唯一的出师标准。</div>"
+    "<p class='subtitle'>新人不需要背完手册才开始做单。60 天的目标，是在适合的岗位难度下，学会用同一套判断方法跑完一次真实闭环；是否独立，按能力短板分流，不按统一成绩单判定。</p><h3>先判断新人缺什么，再安排训练</h3><div class='table-wrap'><table><thead><tr><th>新人类型</th><th>常见短板</th><th>60 天重点</th></tr></thead><tbody><tr><td><b>研究搜寻强、开口弱</b></td><td>名单很长，电话不敢打或问不深。</td><td>跟听、角色扮演、首通电话复盘。</td></tr><tr><td><b>销售感强、方法弱</b></td><td>推进快，但事实、记录和风险缺失。</td><td>接单评分、岗位评分卡、推荐前核实。</td></tr><tr><td><b>有招聘经验、换了赛道</b></td><td>懂流程，不懂公司、岗位和人才迁移。</td><td>行业判断、人才地图、与用人经理校准。</td></tr></tbody></table></div><h3>第 1—10 天：接手真实职位，开始联系</h3><p>第一周就按已确认的岗位要求寻访和联系；必要时先演练开场。新人负责找线索、通话和更新事实，导师检查来源与初步判断。不要把二十人名单当拨号门槛；实际出现推荐或面试机会，就及时带着推进。</p><h3>第 11—30 天：在陪同下跑通一次</h3><p>继续推进手上的真实候选人，把电话判断、推荐和面试反馈接起来。导师依据真实记录复核最薄弱的一项；没有出现的场景用演练补充，不强行凑深聊、市场校准或 Offer 数量。</p><h3>第 31—60 天：承担一张小而完整的单</h3><p>选择职责清楚、反馈正常的中级岗位，独立推进到面试或 Offer 节点；同时维护人才库、写一次失败复盘。高管、极稀缺技术岗或决策链混乱的岗位，不作为新人独立考核样本。</p><h3>第 60 天怎么决定下一步</h3><div class='keypoints'><div class='kp'><b>可以独立</b>：能说清事实、判断、风险和下一步，并能按节奏向客户与候选人推进。</div><div class='kp'><b>带着短板独立</b>：只在电话、画像或 Offer 等一个环节继续由导师把关，其他环节独立。</div><div class='kp'><b>继续带教</b>：不是“没成单”，而是关键事实、职业诚信或复盘能力仍不稳定；明确补哪一项、再观察两周。</div></div><div class='callout'><span class='tt'>带教原则</span>每周只抓一个最影响成单的动作。先让新人把一张单讲清楚，再增加岗位数量；不把 Offer 数量当成唯一的出师标准。</div>"
   );
 
   rebuildSectionKeepDeep(
@@ -653,35 +873,16 @@
     if (heading) heading.textContent = title;
   });
 
-  const chapterTocLabels = {
-    "client-analysis": ["这是不是一张能做的单", "启动会必须确认什么", "谁影响决策、谁最终拍板", "什么情况下及时停单", "接单时怎么把问题问透"],
-    "skill-deconstruct": ["先定义到岗后要交付什么", "把岗位写成可找人的画像", "和客户定下必要取舍", "怎样把画像交给寻访", "画像不清时怎么校准"],
-    "skill-industry": ["用首批样本验证市场", "市场验证后给出什么结论", "什么时候需要补行业研究", "长期激励何时影响寻访", "市场不匹配时怎么沟通"],
-    "skill-embodied": ["具身大脑到底管什么", "公司走到哪一步", "公司靠什么赚钱", "美国五条具身大脑路线"],
-    "skill-llm": ["公司靠哪一层赚钱", "瓶颈对应什么人才", "美国大模型产业怎么分", "接单前必须问清什么"],
-    "skill-fde": ["FDE 到底解决什么问题", "为什么企业开始需要这类人", "薪酬怎么判断", "候选人怎么筛", "怎样辅导候选人", "怎样判断一家公司是真 FDE", "从哪里找人"],
-    "sop-flow": ["客户为什么付费", "四种不确定怎么解决", "一张单只过六道关", "每关要拿到什么证据", "国际团队怎样把流程做稳"],
-    "sop-search": ["先判断卡在名单还是方向", "怎样搭一张可用的人才池", "每天怎样推进寻访", "找不到人时怎么处理", "寻访开场怎么说"],
-    "sop-call": ["电话到底要拿到什么", "不同状态先解决什么", "一通电话怎么自然推进", "挂电话后留什么", "什么情况别硬推"],
-    "skill-candidate": ["用五维评估卡判断", "深聊只追哪三层信息", "动机怎样动态复核", "怎样写出判断结论", "不推荐的人怎么沉淀"],
-    "sop-recommend": ["什么情况先别急着推荐", "发推荐前必须核实什么", "推荐语怎样让客户看懂", "发出后怎样拿到反馈", "推荐时到底该说什么"],
-    "sop-interview": ["面试为什么会卡住", "候选人面前要准备什么", "客户面前要确认什么", "面后怎样推动决定", "面试辅导怎么聊"],
-    "sop-offer": ["不同候选人怎样推进 Offer", "先弄清他真正看重什么", "谈 Offer 前必须问透什么", "犹豫、比价、挽留时怎么聊", "客户卡审批或压价怎么推"],
-    "sop-onboard": ["入职前先排查哪些风险", "候选人这条线怎么跟", "客户这条线怎么跟", "双方信息怎样对齐", "入职后第一个月怎么跟"],
-    "sop-payment": ["开票前材料怎么核对", "不同节点怎样催回款", "系统怎样盯住回款", "回款卡住时怎么升级"],
-    "sop-guarantee": ["每周怎么听出真实状态", "发现异常先怎么处理", "过保后怎样继续经营关系", "保证期双边跟进怎么做"],
-    resume: ["为什么先看简历再打电话", "简历先拆哪几部分", "初筛时一定抓住的信息", "哪些红旗必须核实", "常见包装怎么识别"],
-    "skill-firstcall": ["一通电话的六段结构", "15 秒怎么介绍自己", "答不上来时怎样处理", "打完电话核对什么"],
-    "exec-mapping": ["什么时候要画人才地图", "人才地图怎么用", "四步怎么做", "怎么打开中高端候选人"],
-    "sop-channel": ["人才库要记录什么", "每周怎么维护人才库", "外部渠道各解决什么", "渠道怎么复盘"],
-    "rel-refer": ["关系经营的目标", "什么时候要转介绍", "关系记录怎么写"],
-    "skill-bd": ["打电话前先准备什么", "怎样让客户愿意听下去", "怎样摸清真实需求", "怎样讲清你的价值", "客户拒绝时怎么继续"],
-    "client-dev": ["一次客户拜访怎么安排", "拜访前准备哪些事实", "怎样持续拿到客户需求"],
-    path: ["先判断新人缺什么", "前 10 天先练什么", "第 11—30 天怎么陪跑", "第 31—60 天如何独立做单", "第 60 天怎样定下一步"],
-    "cases-win": ["海外营销主管案例", "海外销售经理案例（一）", "海外销售经理案例（二）", "区域运营总监案例", "零售运营主任案例"],
-    "cases-fail": ["入职 3 天被辞退", "谈判为什么谈崩", "候选人为什么接了不去"],
-    risk: ["接单风险", "推荐风险", "面试与 Offer 风险", "入职和过保风险", "怎样和候选人说"],
-  };
+  applyFocusedSections();
+
+  document.querySelectorAll(".section > h3").forEach((heading) => {
+    heading.textContent = heading.textContent
+      .replace(/^\s*(?:[一二三四五六七八九十]+、|[0-9]+[.、])/u, "")
+      .replace(/^\s*[🎯🗣️📌🧭💡⚙️]+\s*/u, "")
+      .replace(/^实战深化\s*[·:：]?\s*/u, "")
+      .trim();
+  });
+
 
   const sectionBriefs = {
     "client-analysis": ["01 单子准入", "这单值不值得投入", "HC、预算、拍板人、反馈节奏", "单子评分卡", "事实不全，只做低投入验证"],
@@ -875,9 +1076,8 @@
     const h3s = Array.from(sec.children).filter(
       (el) => el.tagName === "H3"
     );
-      const tocLimit = 5;
     if (h3s.length >= 2 && id !== "home" && id !== "process-catalog") {
-      h3s.slice(0, tocLimit).forEach((h, i) => {
+      h3s.forEach((h, i) => {
         if (!h.id) h.id = id + "-t" + (i + 1);
       });
       // 目录项：剥离编号前缀（一、/1./A.）和 emoji，保留正文；长标题截断
@@ -891,36 +1091,29 @@
           .replace(/[\uD83C-\uDBFF\uDC00-\uDFFF\u2600-\u27BF\uFE0F]/g, "")
           .replace(/\s+/g, " ")
           .trim();
-      const compactHead = (t) => {
-        const clean = cleanHead(t).replace(/^先/, "");
-        return clean.split(/[：·（(]/)[0].trim();
-      };
       const toc = document.createElement("div");
       toc.className = "chapter-toc";
       let chips = '<div class="toc-title">本章目录</div><div class="toc-chips">';
-      h3s.slice(0, tocLimit).forEach((h, i) => {
-        let txt = chapterTocLabels[id]?.[i] || compactHead(h.textContent);
+      h3s.forEach((h, i) => {
+        let txt = cleanHead(h.textContent);
         // 实战深化块单独标记
         const isDeep = h.textContent.includes("实战深化");
         if (isDeep) txt = "实战深化 · " + txt.replace(/^实战深化\s*[·:：]?\s*/, "");
-        if (txt.length > 30) txt = txt.slice(0, 30) + "…";
         chips +=
-          '<span class="toc-chip' +
+          '<button type="button" class="toc-chip' +
           (isDeep ? " deep" : "") +
           '" data-target="' +
-          id +
-          "-t" +
-          (i + 1) +
+          h.id +
           '"><span class="toc-n">' +
           (i + 1) +
           "</span>" +
           txt +
-          "</span>";
+          "</button>";
       });
       chips += "</div>";
       toc.innerHTML = chips;
       // 插到 h2 标题之后（crumb 之后是 h2，toc 放在 h2 后面）
-      const h2 = sec.children[1] && sec.children[1].tagName === "H2" ? sec.children[1] : sec.firstChild;
+      const h2 = sec.querySelector(":scope > h2");
       sec.insertBefore(toc, h2.nextSibling);
       toc.classList.add("show");
       toc.querySelectorAll(".toc-chip").forEach((c) =>
